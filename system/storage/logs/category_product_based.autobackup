@@ -1,0 +1,128 @@
+SETTING	NUMBER	SUB-SETTING	SUB-NUMBER	SUB-SUB-SETTING	VALUE
+autocomplete_preloading					0
+autosave					0
+charge	1	charges			0 - 149.99 = 15\n150 - 999999 = 0
+charge	1	group			2
+charge	1	rule	10	comparison	not
+charge	1	rule	10	type	postcode
+charge	1	rule	10	value	728000 - 729999
+charge	1	rule	11	comparison	not
+charge	1	rule	11	type	postcode
+charge	1	rule	11	value	636000 - 639999
+charge	1	rule	1	comparison	not
+charge	1	rule	1	type	postcode
+charge	1	rule	1	value	637000-638999
+charge	1	rule	2	comparison	not
+charge	1	rule	2	type	postcode
+charge	1	rule	2	value	098000-098999
+charge	1	rule	3	comparison	not
+charge	1	rule	3	type	postcode
+charge	1	rule	3	value	690000-719999
+charge	1	rule	4	comparison	not
+charge	1	rule	4	type	postcode
+charge	1	rule	4	value	629000 - 629999
+charge	1	rule	5	comparison	not
+charge	1	rule	5	type	postcode
+charge	1	rule	5	value	627000 - 628999
+charge	1	rule	6	comparison	not
+charge	1	rule	6	type	postcode
+charge	1	rule	6	value	639000 - 639999
+charge	1	rule	7	comparison	not
+charge	1	rule	7	type	postcode
+charge	1	rule	7	value	619000 - 619999
+charge	1	rule	8	comparison	not
+charge	1	rule	8	type	postcode
+charge	1	rule	8	value	608000 - 609999
+charge	1	rule	9	comparison	not
+charge	1	rule	9	type	postcode
+charge	1	rule	9	value	718000 - 719999
+charge	1	title_admin			Free Delivery
+charge	1	title_en-gb			Delivery
+charge	1	type			total
+charge	2	charges			0
+charge	2	group			1
+charge	2	title_admin			Self Pickup
+charge	2	title_en-gb			Self Pickup
+charge	2	type			total
+charge	3	charges			0 - 149.99 = 15\n150 - 999999 = 0
+charge	3	group			2
+charge	3	rule	1	comparison	is
+charge	3	rule	1	type	postcode
+charge	3	rule	1	value	098000-098999
+charge	3	title_admin			Sentosa Delivery
+charge	3	title_en-gb			Delivery
+charge	3	type			total
+combination	1	formula			
+combination	1	groups_required			
+combination	1	sort_order			
+combination	1	title			single
+display					expanded
+distance_calculation					driving
+distance_units					mi
+google_apikey					
+heading_en-gb					Category &amp; Product-Based Shipping
+product_group	1	member	1		Standard Bakes [category:5]
+product_group	1	member	2		Custom Bakes &gt; Cakes [category:7]
+product_group	1	member	3		Custom Bakes &gt; Decorations [category:39]
+product_group	1	member	4		Custom Bakes &gt; Candles [category:9]
+product_group	1	member	5		Custom Bakes &gt; Mini Bites [category:10]
+product_group	1	member	6		Custom Bakes &gt; One Tier [category:44]
+product_group	1	name			Standard and Custom
+product_group	1	subcategories			1
+product_group	2	member	10		Two Tier Gold Ombre with Lavender [product:318]
+product_group	2	member	11		Two Tier Gold Splatter Cake [product:319]
+product_group	2	member	12		Two Tier Jungle Animal Themed Cake [product:320]
+product_group	2	member	13		Two Tier Marbled Cake with Candy Shards and Macaron Decor [product:321]
+product_group	2	member	14		Two Tier Marbled Cake with Pink &amp; Blue Candy Shards and Macaron Decor [product:322]
+product_group	2	member	15		Two Tier Marbled Drizzle Cake with Baby's Breath [product:323]
+product_group	2	member	16		Two Tier Mixed Berries and Thyme Cake [product:324]
+product_group	2	member	17		Two Tier Nautical Cake [product:325]
+product_group	2	member	18		Two Tier Navy Nautical Cake [product:326]
+product_group	2	member	19		Two Tier Ombre striped with Gold Leaves and Mixed Berries [product:327]
+product_group	2	member	2		Two Tier Auspicious Longevity Cake [product:230]
+product_group	2	member	20		Two Tier Ombre with Baby's Breath [product:328]
+product_group	2	member	21		Two Tier Ombre with Rainbow and Unicorn [product:329]
+product_group	2	member	22		Two Tier Ombre with Rainbow Balloons [product:330]
+product_group	2	member	23		Two Tier Ombre with Rainbow Decor [product:389]
+product_group	2	member	24		Two Tier Ombre with Stars Cake [product:390]
+product_group	2	member	25		Two Tier Pastel Marble with Baby's Breath [product:391]
+product_group	2	member	26		Two Tier Pastel Pink, Mint &amp; Gold with Rainbow Topper [product:392]
+product_group	2	member	27		Two Tier Pastel Rainbow Drizzle Cake [product:393]
+product_group	2	member	28		Two Tier Piped Cactus Cake [product:231]
+product_group	2	member	29		Two Tier Rainbow and Ombre with Cascading Gold Cake [product:394]
+product_group	2	member	3		Two Tier Black &amp; Gold Chocolate Candy Cake [product:312]
+product_group	2	member	30		Two Tier Rainbow Polka Dot Cake [product:395]
+product_group	2	member	31		Two Tier Rose Gold Ombre with Thyme and Baby’s Breath [product:396]
+product_group	2	member	32		Two Tier Rustic Chocolate Berries and Thyme [product:397]
+product_group	2	member	33		Two Tier Rustic Daisies and Baby’s Breath Cake [product:398]
+product_group	2	member	34		Two Tier Rustic Floral Berry Cake [product:399]
+product_group	2	member	35		Two Tier Rustic Floral Berry with Thyme [product:400]
+product_group	2	member	36		Two Tier Rustic Gold and Fresh Florals Cake [product:232]
+product_group	2	member	37		Custom Bakes &gt; Two Tier [category:56]
+product_group	2	member	4		Two Tier Barnyard Cake [product:233]
+product_group	2	member	5		Two Tier Black &amp; Navy Blue Marble with Silver Chocolate Sails [product:313]
+product_group	2	member	6		Two Tier Bohemian Rustic Cake [product:314]
+product_group	2	member	7		Two Tier Candyland Cake [product:315]
+product_group	2	member	8		Two Tier Chocolate Overload Cake [product:316]
+product_group	2	member	9		Two Tier Floral Longevity Cake [product:317]
+product_group	2	name			Two Tier
+product_group	2	subcategories			1
+rule_set	1	name			Two-Tier Cakes
+rule_set	1	rule	1	comparison	is
+rule_set	1	rule	1	type	category
+rule_set	1	rule	1	value	Custom Bakes &gt; Two Tier [56]
+rule_set	1	rule	2	comparison	after
+rule_set	1	rule	2	type	date
+rule_set	1	rule	2	value	2019-10-01
+rule_set	1	rule	3	comparison	before
+rule_set	1	rule	3	type	date
+rule_set	1	rule	3	value	2019-10-03
+rule_set	1	rule	4	comparison	onlyany
+rule_set	1	rule	4	type	product_group
+rule_set	1	rule	4	value	2
+rule_set	2	name			
+sort_order					1
+status					1
+tax_class_id					0
+testing_mode					0
+tooltips					1

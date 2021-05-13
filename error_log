@@ -1,0 +1,113 @@
+[16-Mar-2020 23:45:48 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: EHLO not accepted from server! in /home/edithpat/public_html/system/library/mail.php:253
+Stack trace:
+#0 /home/edithpat/public_html/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/edithpat/public_html/catalog/model/account/customer.php(83): Proxy->__call('generate', Array)
+#4 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelAccountCustomer->addCustomer(Array)
+#5 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#6 /home/edithpat/public_html/catalog/controller/quickcheckout/register.php(84): Proxy->__call('addCustomer', Array)
+#7 /home/edithpat/public_html/system/storage/modification/system/engine/action.php(51): ControllerQuickCheckoutRegister->validate()
+#8 /home/edithpat/public in /home/edithpat/public_html/system/library/mail.php on line 253
+[03-Apr-2020 03:14:15 Asia/Singapore] PHP Warning:  mysqli::__construct(): (HY000/2002): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/edithpat/public_html/system/library/db/mysqli.php on line 7
+[03-Apr-2020 03:14:15 Asia/Singapore] PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /home/edithpat/public_html/system/library/db/mysqli.php on line 10
+[03-Apr-2020 03:14:15 Asia/Singapore] PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in /home/edithpat/public_html/system/library/db/mysqli.php on line 10
+[03-Apr-2020 03:14:15 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/edithpat/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/edithpat/public_html/system/library/db.php(9): DB\MySQLi->__construct('localhost', 'edithpat_user', '1q2w3e4r5!@#123', 'edithpat_db', '3306')
+#1 /home/edithpat/public_html/system/framework.php(36): DB->__construct('mysqli', 'localhost', 'edithpat_user', '1q2w3e4r5!@#123', 'edithpat_db', '3306')
+#2 /home/edithpat/public_html/system/startup.php(132): require_once('/home/edithpat/...')
+#3 /home/edithpat/public_html/index.php(19): start('catalog')
+#4 {main}
+  thrown in /home/edithpat/public_html/system/library/db/mysqli.php on line 10
+[08-Apr-2020 22:43:37 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: DATA not accepted from server! in /home/edithpat/public_html/system/library/mail.php:432
+Stack trace:
+#0 /home/edithpat/public_html/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/edithpat/public_html/catalog/model/account/customer.php(83): Proxy->__call('generate', Array)
+#4 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelAccountCustomer->addCustomer(Array)
+#5 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#6 /home/edithpat/public_html/catalog/controller/quickcheckout/register.php(84): Proxy->__call('addCustomer', Array)
+#7 /home/edithpat/public_html/system/storage/modification/system/engine/action.php(51): ControllerQuickCheckoutRegister->validate()
+#8 /home/edithpat/public in /home/edithpat/public_html/system/library/mail.php on line 432
+[18-Apr-2020 21:19:46 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: RCPT TO not accepted from server! in /home/edithpat/public_html/system/library/mail.php:363
+Stack trace:
+#0 /home/edithpat/public_html/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/edithpat/public_html/catalog/controller/account/forgotten.php(61): Proxy->__call('generate', Array)
+#4 /home/edithpat/public_html/system/storage/modification/system/engine/action.php(51): ControllerAccountForgotten->index()
+#5 /home/edithpat/public_html/catalog/controller/startup/router.php(25): Action->execute(Object(Registry))
+#6 /home/edithpat/public_html/system/storage/modification/system/engine/action.php(51): ControllerStartupRouter->index()
+#7 /home/edithpat/public_html/system/engine/front.php(34): Action->execute(Object(Registry))
+#8 /home/edithpat/public_html/system/eng in /home/edithpat/public_html/system/library/mail.php on line 363
+[18-Apr-2020 21:19:57 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: RCPT TO not accepted from server! in /home/edithpat/public_html/system/library/mail.php:363
+Stack trace:
+#0 /home/edithpat/public_html/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/edithpat/public_html/catalog/controller/account/forgotten.php(61): Proxy->__call('generate', Array)
+#4 /home/edithpat/public_html/system/storage/modification/system/engine/action.php(51): ControllerAccountForgotten->index()
+#5 /home/edithpat/public_html/catalog/controller/startup/router.php(25): Action->execute(Object(Registry))
+#6 /home/edithpat/public_html/system/storage/modification/system/engine/action.php(51): ControllerStartupRouter->index()
+#7 /home/edithpat/public_html/system/engine/front.php(34): Action->execute(Object(Registry))
+#8 /home/edithpat/public_html/system/eng in /home/edithpat/public_html/system/library/mail.php on line 363
+[23-Apr-2020 11:24:20 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error:  (0) in /home/fcscommerce/public_html/demo10/system/library/mail.php:185
+Stack trace:
+#0 /home/fcscommerce/public_html/demo10/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/fcscommerce/public_html/demo10/catalog/model/checkout/order.php(810): Proxy->__call('generate', Array)
+#4 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelCheckoutOrder->addOrderHistory(1, '1')
+#5 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#6 /home/fcscommerce/public_html/demo10/catalog/controller/extension/payment/cod.php(17): Proxy->__call('addOrderHistory', Array)
+#7 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php(51): in /home/fcscommerce/public_html/demo10/system/library/mail.php on line 185
+[23-Apr-2020 11:25:11 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error:  (0) in /home/fcscommerce/public_html/demo10/system/library/mail.php:185
+Stack trace:
+#0 /home/fcscommerce/public_html/demo10/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/fcscommerce/public_html/demo10/catalog/model/checkout/order.php(810): Proxy->__call('generate', Array)
+#4 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelCheckoutOrder->addOrderHistory(2, '1')
+#5 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#6 /home/fcscommerce/public_html/demo10/catalog/controller/extension/payment/cod.php(17): Proxy->__call('addOrderHistory', Array)
+#7 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php(51): in /home/fcscommerce/public_html/demo10/system/library/mail.php on line 185
+[23-Apr-2020 11:26:31 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error:  (0) in /home/fcscommerce/public_html/demo10/system/library/mail.php:185
+Stack trace:
+#0 /home/fcscommerce/public_html/demo10/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/fcscommerce/public_html/demo10/catalog/model/account/customer.php(83): Proxy->__call('generate', Array)
+#4 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelAccountCustomer->addCustomer(Array)
+#5 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#6 /home/fcscommerce/public_html/demo10/catalog/controller/account/register.php(100): Proxy->__call('addCustomer', Array)
+#7 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php(51): Controlle in /home/fcscommerce/public_html/demo10/system/library/mail.php on line 185
+[23-Apr-2020 11:27:25 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error:  (0) in /home/fcscommerce/public_html/demo10/system/library/mail.php:185
+Stack trace:
+#0 /home/fcscommerce/public_html/demo10/catalog/model/tool/pro_email.php(1097): Mail->send()
+#1 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelToolProEmail->generate(Array)
+#2 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#3 /home/fcscommerce/public_html/demo10/catalog/model/account/customer.php(83): Proxy->__call('generate', Array)
+#4 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/loader.php(184): ModelAccountCustomer->addCustomer(Array)
+#5 /home/fcscommerce/public_html/demo10/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#6 /home/fcscommerce/public_html/demo10/catalog/controller/account/register.php(100): Proxy->__call('addCustomer', Array)
+#7 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php(51): Controlle in /home/fcscommerce/public_html/demo10/system/library/mail.php on line 185
+[13-May-2020 12:21:34 Asia/Singapore] PHP Fatal error:  Uncaught Error: Class 'Controllerproductcategory' not found in /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php:43
+Stack trace:
+#0 /home/fcscommerce/public_html/demo10/catalog/controller/startup/router.php(25): Action->execute(Object(Registry))
+#1 /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php(51): ControllerStartupRouter->index()
+#2 /home/fcscommerce/public_html/demo10/system/engine/front.php(34): Action->execute(Object(Registry))
+#3 /home/fcscommerce/public_html/demo10/system/engine/front.php(29): Front->execute(Object(Action))
+#4 /home/fcscommerce/public_html/demo10/system/framework.php(103): Front->dispatch(Object(Action), Object(Action))
+#5 /home/fcscommerce/public_html/demo10/system/startup.php(132): require_once('/home/fcscommer...')
+#6 /home/fcscommerce/public_html/demo10/index.php(19): start('catalog')
+#7 {main}
+  thrown in /home/fcscommerce/public_html/demo10/system/storage/modification/system/engine/action.php on line 43
+[13-May-2020 17:22:41 Asia/Singapore] PHP Parse error:  syntax error, unexpected end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 410
+[13-May-2020 17:23:13 Asia/Singapore] PHP Parse error:  syntax error, unexpected end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 410
+[13-May-2020 17:23:16 Asia/Singapore] PHP Parse error:  syntax error, unexpected end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 410
+[13-May-2020 17:23:33 Asia/Singapore] PHP Parse error:  syntax error, unexpected end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 410
+[13-May-2020 17:23:35 Asia/Singapore] PHP Parse error:  syntax error, unexpected end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 410
+[13-May-2020 17:23:42 Asia/Singapore] PHP Parse error:  syntax error, unexpected '}', expecting end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 151
+[13-May-2020 17:23:43 Asia/Singapore] PHP Parse error:  syntax error, unexpected end of file in /home/fcscommerce/public_html/demo10/catalog/view/theme/default/template/product/product/product_options.tpl on line 410

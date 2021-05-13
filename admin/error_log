@@ -1,0 +1,59 @@
+[15-Mar-2020 13:20:03 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[15-Mar-2020 13:56:14 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[16-Mar-2020 13:37:48 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[16-Mar-2020 18:26:08 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[16-Mar-2020 18:57:13 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[17-Mar-2020 18:31:36 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[18-Mar-2020 16:08:03 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[18-Mar-2020 16:16:00 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[18-Mar-2020 16:25:09 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[19-Mar-2020 12:18:36 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[24-Mar-2020 20:37:04 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[27-Mar-2020 18:30:52 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[10-Apr-2020 17:02:12 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: Table 'edithpat_db.j5ui84yug_yng8e54e_bganycombi' doesn't exist<br />Error No: 1146<br />SELECT COUNT(*) AS total FROM j5ui84yug_yng8e54e_bganycombi WHERE 1  in /home/edithpat/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/edithpat/public_html/system/library/db.php(16): DB\MySQLi->query('SELECT COUNT(*)...', Array)
+#1 /home/edithpat/public_html/edith20191206/model/extension/bganycombi.php(196): DB->query('SELECT COUNT(*)...')
+#2 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelExtensionBganycombi->getTotalbganycombis(Array)
+#3 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#4 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(544): Proxy->__call('getTotalbganyco...', Array)
+#5 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(41): ControllerExtensionBganycombi->getList()
+#6 /home/edithpat/public_html/system/storage/modification/sy in /home/edithpat/public_html/system/library/db/mysqli.php on line 40
+[10-Apr-2020 17:02:16 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: Table 'edithpat_db.j5ui84yug_yng8e54e_bganycombi' doesn't exist<br />Error No: 1146<br />SELECT COUNT(*) AS total FROM j5ui84yug_yng8e54e_bganycombi WHERE 1  in /home/edithpat/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/edithpat/public_html/system/library/db.php(16): DB\MySQLi->query('SELECT COUNT(*)...', Array)
+#1 /home/edithpat/public_html/edith20191206/model/extension/bganycombi.php(196): DB->query('SELECT COUNT(*)...')
+#2 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelExtensionBganycombi->getTotalbganycombis(Array)
+#3 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#4 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(544): Proxy->__call('getTotalbganyco...', Array)
+#5 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(41): ControllerExtensionBganycombi->getList()
+#6 /home/edithpat/public_html/system/storage/modification/sy in /home/edithpat/public_html/system/library/db/mysqli.php on line 40
+[10-Apr-2020 17:02:18 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: Table 'edithpat_db.j5ui84yug_yng8e54e_bganycombi' doesn't exist<br />Error No: 1146<br />SELECT COUNT(*) AS total FROM j5ui84yug_yng8e54e_bganycombi WHERE 1  in /home/edithpat/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/edithpat/public_html/system/library/db.php(16): DB\MySQLi->query('SELECT COUNT(*)...', Array)
+#1 /home/edithpat/public_html/edith20191206/model/extension/bganycombi.php(196): DB->query('SELECT COUNT(*)...')
+#2 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelExtensionBganycombi->getTotalbganycombis(Array)
+#3 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#4 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(544): Proxy->__call('getTotalbganyco...', Array)
+#5 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(41): ControllerExtensionBganycombi->getList()
+#6 /home/edithpat/public_html/system/storage/modification/sy in /home/edithpat/public_html/system/library/db/mysqli.php on line 40
+[10-Apr-2020 17:02:19 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: Table 'edithpat_db.j5ui84yug_yng8e54e_bganycombi' doesn't exist<br />Error No: 1146<br />SELECT COUNT(*) AS total FROM j5ui84yug_yng8e54e_bganycombi WHERE 1  in /home/edithpat/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/edithpat/public_html/system/library/db.php(16): DB\MySQLi->query('SELECT COUNT(*)...', Array)
+#1 /home/edithpat/public_html/edith20191206/model/extension/bganycombi.php(196): DB->query('SELECT COUNT(*)...')
+#2 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelExtensionBganycombi->getTotalbganycombis(Array)
+#3 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#4 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(544): Proxy->__call('getTotalbganyco...', Array)
+#5 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(41): ControllerExtensionBganycombi->getList()
+#6 /home/edithpat/public_html/system/storage/modification/sy in /home/edithpat/public_html/system/library/db/mysqli.php on line 40
+[20-Apr-2020 17:14:41 Asia/Singapore] PHP Fatal error:  Uncaught Exception: Error: Table 'edithpat_db.j5ui84yug_yng8e54e_bganycombi' doesn't exist<br />Error No: 1146<br />SELECT COUNT(*) AS total FROM j5ui84yug_yng8e54e_bganycombi WHERE 1  in /home/edithpat/public_html/system/library/db/mysqli.php:40
+Stack trace:
+#0 /home/edithpat/public_html/system/library/db.php(16): DB\MySQLi->query('SELECT COUNT(*)...', Array)
+#1 /home/edithpat/public_html/edith20191206/model/extension/bganycombi.php(196): DB->query('SELECT COUNT(*)...')
+#2 /home/edithpat/public_html/system/storage/modification/system/engine/loader.php(184): ModelExtensionBganycombi->getTotalbganycombis(Array)
+#3 /home/edithpat/public_html/system/engine/proxy.php(25): Loader->{closure}(Array, Array)
+#4 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(544): Proxy->__call('getTotalbganyco...', Array)
+#5 /home/edithpat/public_html/edith20191206/controller/extension/bganycombi.php(41): ControllerExtensionBganycombi->getList()
+#6 /home/edithpat/public_html/system/storage/modification/sy in /home/edithpat/public_html/system/library/db/mysqli.php on line 40
+[21-Apr-2020 18:36:02 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21
+[22-Apr-2020 12:32:02 Asia/Singapore] PHP Deprecated:  Methods with the same name as their class will not be constructors in a future version of PHP; ExcelWriter has a deprecated constructor in /home/edithpat/public_html/edith20191206/controller/sale/excelwriter.inc.php on line 21

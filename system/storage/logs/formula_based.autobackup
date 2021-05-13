@@ -1,0 +1,21 @@
+SETTING	NUMBER	SUB-SETTING	SUB-NUMBER	SUB-SUB-SETTING	VALUE
+autosave					0
+charge	1	charges			12
+charge	1	group			
+charge	1	title_admin			Promo Shipping
+charge	1	title_en-gb			Promo Shipping (10am to 7pm)
+charge	1	type			flat
+combination	1	formula			
+combination	1	groups_required			
+combination	1	sort_order			
+combination	1	title			single
+display					expanded
+distance_calculation					driving
+distance_units					mi
+heading_en-gb					Formula-Based Shipping
+rule_set	1	name			
+sort_order					1
+status					1
+tax_class_id					0
+testing_mode					0
+tooltips					1
