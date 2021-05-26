@@ -7,7 +7,7 @@
                         if($content['title']){?>
                             <h3><?= $content['title']; ?></h3>
                         <?php } ?>
-                        <?= html_entity_decode($content['description']); 
+                        <?= html_entity_decode($content['description']);
                     }else{ ?>
                         <img src="image/<?= $content['image']; ?>" class="img-responsive left">
                     <?php } ?>
@@ -17,7 +17,7 @@
                         if($content['title']){?>
                             <h3><?= $content['title']; ?></h3>
                         <?php } ?>
-                        <?= html_entity_decode($content['description']); 
+                        <?= html_entity_decode($content['description']);
                     }else{ ?>
                         <img src="image/<?= $content['image']; ?>" class="img-responsive right">
                     <?php } ?>

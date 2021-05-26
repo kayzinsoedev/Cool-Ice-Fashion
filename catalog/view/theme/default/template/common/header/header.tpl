@@ -9,7 +9,7 @@
 <?= $head_tags ?>
 
 <body class="<?=$class; ?> <?= $seo_enabled?'short_hand':''; ?> <?= $isMobile; ?>">
-    
+
     <script>
       // window.fbAsyncInit = function() {
       //   FB.init({
@@ -18,11 +18,11 @@
       //     xfbml      : true,
       //     version    : '{api-version}'
       //   });
-          
-      //   FB.AppEvents.logPageView();   
-          
+
+      //   FB.AppEvents.logPageView();
+
       // };
-    
+
       // (function(d, s, id){
       //    var js, fjs = d.getElementsByTagName(s)[0];
       //    if (d.getElementById(id)) {return;}
@@ -42,18 +42,54 @@
 	<?= $fb_messanger; ?>
 	<div class="x213"><h1 id="page_heading_title" ><?= $title; ?></h1></div>
 	<header class="fixed-header" >
-	    <div class="header_title header_banner">
-	        <?php if($header_icon != ""){?>
-	            <img src="<?= "image/".$header_icon ?>" class="img_responsive"> 
-	        <?php } ?>
-	        <?php if($header_title != ""){?>
-	            <?= html_entity_decode($header_title); ?>
-	        <?php } ?>
-	    </div>
+
+      <!-- <div class="header-top-bar" style="background-color:<?= $header_top_background; ?>"> -->
+
+						<!-- announcement_bar -->
+            <div class="header_title header_banner">
+
+              <!-- social icon -->
+
+              <!-- social icon -->
+
+                <div class="header-top-left">
+                  <?php if($social_icons){ ?>
+                        <div class="header-social-icons">
+                              <?php foreach($social_icons as $icon){ ?>
+                              <a href="<?= $icon['link']; ?>" title="<?= $icon['title']; ?>" alt="
+                                    <?= $icon['title']; ?>" target="_blank">
+                                <!-- <img data-src="<?= $icon['icon']; ?>" title="<?= $icon['title']; ?>" class="img-responsive lazy" alt="<?= $icon['title']; ?>" /> -->
+                                <img src="<?= $icon['icon']; ?>" title="<?= $icon['title']; ?>" class="img-responsive lazy" alt="<?= $icon['title']; ?>" />
+                              </a>
+                              <?php } ?>
+                        </div>
+                  <?php } ?>
+                </div>
+
+              <div class="header-content">
+        	        <?php if($header_icon != ""){?>
+        	            <img src="<?= "image/".$header_icon ?>" class="img_responsive delivery-icon">
+        	        <?php } ?>
+        	        <?php if($header_title != ""){?>
+        	            <?= html_entity_decode($header_title); ?>
+        	        <?php } ?>
+              </div>
+
+              <div class="header-top-right">
+                	<?= $search; ?>
+
+              </div>
+
+      	    </div>
+						<!-- announcement_bar -->
+
+		<!-- </div> -->
+
+
 	    <div class="container">
 	    </div>
 		<div class="container">
-			
+
 			<div class="header-container">
 
 				<div class="header-mobile-links visible-xs visible-sm">
@@ -67,8 +103,8 @@
 					</div>
 				</div>
 
-				<div class="">
-				</div>
+				<!-- <div class="">
+				</div> -->
 				<div class="header-logo">
 					<?php if ($logo) { ?>
 						<a class="header-logo-image" href="<?=$home; ?>">
@@ -78,31 +114,32 @@
 						<a class="header-logo-text" href="<?=$home; ?>"><?=$name; ?></a>
 					<?php } ?>
 				</div>
-				<div class="header-top">
-
-<!--					<div class="search_container">
-						<span class="hidden-xs hidden-sm"><?= $search; ?></span>
-					</div>-->
-					<div class="flavours_container">
-                                            <button class="flavours_button" onclick="window.location.href='<?= $flavours; ?>'">Flavours In Store</button>
-					</div>
-					<span class="hidden-xs hidden-sm">
-						<?= $login_part; ?>
-					</span>
-					<?= $cart; ?>
-
-					<span class="hidden" >
-                                                <?= $enquiry; ?>
-						<?=$currency; ?>
-						<?=$language; ?>
-						<?=$wishlist; ?>
-					</span>
-				</div>
-
 
 				<div class="header-menu hidden-xs hidden-sm">
 					<?= $menu; ?>
 				</div>
+
+
+        <div class="header-top">
+
+          <div class="flavours_container">
+                  <button class="flavours_button" onclick="window.location.href='<?= $flavours; ?>'">Flavours In Store</button>
+          </div>
+
+          <?= $wishlist; ?>
+          <?= $cart; ?>
+          <span class="hidden-xs hidden-sm">
+            <?= $login_part; ?>
+          </span>
+
+          <span class="hidden" >
+            <?= $enquiry; ?>
+            <?=$currency; ?>
+            <?=$language; ?>
+
+          </span>
+        </div>
+
 			</div>
 		</div>
 	</header>
@@ -110,14 +147,14 @@
 	<div id="sidr">
 		<div class="header-mobile">
 			<div class="mobile-account relative">
-				<?php if($logged){ ?> 
+				<?php if($logged){ ?>
 				<a href="<?= $account; ?>">
 					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 					<?= $text_account; ?></a>
 				<a href="<?= $logout; ?>">
 					<i class="fa fa-sign-out" aria-hidden="true"></i>
 					<?= $text_logout; ?></a>
-				<?php }else{ ?> 
+				<?php }else{ ?>
 				<a href="<?= $login; ?>">
 					<i class="fa fa-user-circle-o" aria-hidden="true"></i>
 					<?= $text_login; ?></a>

@@ -18,7 +18,7 @@ class ModelDesignBanner extends Model {
 		if (isset($data['banner_image'])) {
 			foreach ($data['banner_image'] as $language_id => $value) {
 				foreach ($value as $banner_image) {
-					$this->db->query("INSERT INTO " . DB_PREFIX . "banner_image SET banner_id = '" . (int)$banner_id . "', language_id = '" . (int)$language_id . "', title = '" .  $this->db->escape($banner_image['title']) . "', description = '" .  $this->db->escape($banner_image['description']) . "', link_text = '" .  $this->db->escape($banner_image['link_text']) . "', link = '" .  $this->db->escape($banner_image['link']) . "', image = '" .  $this->db->escape($banner_image['image']) . "', mobile_image = '" .  $this->db->escape($banner_image['mobile_image']) . "', color_theme = '" .  $this->db->escape($banner_image['color_theme']) . "', mobile_color_theme = '" .  $this->db->escape($banner_image['mobile_color_theme']) . "', sort_order = '" .  (int)$banner_image['sort_order'] . "'");
+					$this->db->query("INSERT INTO " . DB_PREFIX . "banner_image SET banner_id = '" . (int)$banner_id . "', language_id = '" . (int)$language_id . "', title = '" .  $this->db->escape($banner_image['title']) . "', description = '" .  $this->db->escape($banner_image['description']) . "', link_text = '" .  $this->db->escape($banner_image['link_text']) . "', link = '" .  $this->db->escape($banner_image['link']) . "', image = '" .  $this->db->escape($banner_image['image']) . "', mobile_image = '" .  $this->db->escape($banner_image['mobile_image']) . "', color_theme = '" .  $this->db->escape($banner_image['color_theme']) . "', mobile_color_theme = '" .  $this->db->escape($banner_image['mobile_color_theme']) . "', sort_order = '" .  (int)$banner_image['sort_order'] . "', textalign = '" .  $this->db->escape($banner_image['textalign']) . "', font_color = '" .  $this->db->escape($banner_image['font_color']) . "', title2 = '" .  $this->db->escape($banner_image['title2']) . "', padright = '" .  $this->db->escape($banner_image['padright']) . "', padleft = '" .  $this->db->escape($banner_image['padleft']) . "'");
 				}
 			}
 		}
@@ -35,7 +35,7 @@ class ModelDesignBanner extends Model {
 		if (isset($data['banner_image'])) {
 			foreach ($data['banner_image'] as $language_id => $value) {
 				foreach ($value as $banner_image) {
-					$this->db->query("INSERT INTO " . DB_PREFIX . "banner_image SET banner_id = '" . (int)$banner_id . "', language_id = '" . (int)$language_id . "', title = '" .  $this->db->escape($banner_image['title']) . "', description = '" .  $this->db->escape($banner_image['description']) . "', link_text = '" .  $this->db->escape($banner_image['link_text']) . "', link = '" .  $this->db->escape($banner_image['link']) . "', mobile_image = '" .  $this->db->escape($banner_image['mobile_image']) . "', color_theme = '" .  $this->db->escape($banner_image['color_theme']) . "', mobile_color_theme = '" .  $this->db->escape($banner_image['mobile_color_theme']) . "', image = '" .  $this->db->escape($banner_image['image']) . "', sort_order = '" . (int)$banner_image['sort_order'] . "'");
+					$this->db->query("INSERT INTO " . DB_PREFIX . "banner_image SET banner_id = '" . (int)$banner_id . "', language_id = '" . (int)$language_id . "', title = '" .  $this->db->escape($banner_image['title']) . "', description = '" .  $this->db->escape($banner_image['description']) . "', link_text = '" .  $this->db->escape($banner_image['link_text']) . "', link = '" .  $this->db->escape($banner_image['link']) . "', mobile_image = '" .  $this->db->escape($banner_image['mobile_image']) . "', color_theme = '" .  $this->db->escape($banner_image['color_theme']) . "', mobile_color_theme = '" .  $this->db->escape($banner_image['mobile_color_theme']) . "', image = '" .  $this->db->escape($banner_image['image']) . "', sort_order = '" . (int)$banner_image['sort_order'] . "', textalign = '" .  $this->db->escape($banner_image['textalign']) . "', font_color = '" .  $this->db->escape($banner_image['font_color']) . "', title2 = '" .  $this->db->escape($banner_image['title2']) . "', padright = '" .  $this->db->escape($banner_image['padright']) . "', padleft = '" .  $this->db->escape($banner_image['padleft']) . "'");
 				}
 			}
 		}
@@ -104,7 +104,12 @@ class ModelDesignBanner extends Model {
 				'color_theme'=> $banner_image['color_theme'],
 				'mobile_image'=> $banner_image['mobile_image'],
 				'mobile_color_theme'=> $banner_image['mobile_color_theme'],
-				'sort_order' => $banner_image['sort_order']
+				'sort_order' => $banner_image['sort_order'],
+				'textalign' => $banner_image['textalign'],
+				'font_color' => $banner_image['font_color'],
+				'title2' => $banner_image['title2'],
+				'padright' => $banner_image['padright'],
+				'padleft' => $banner_image['padleft'],
 			);
 		}
 

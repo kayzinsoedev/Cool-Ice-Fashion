@@ -37,7 +37,7 @@
               <div class="text-danger"><?php echo $error_name; ?></div>
               <?php } ?>
             </div>
-          </div> 
+          </div>
 
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
@@ -52,7 +52,7 @@
                 <?php } ?>
               </select>
             </div>
-          </div>         
+          </div>
 
           <div class="tab-pane">
               <ul class="nav nav-tabs" id="language">
@@ -69,6 +69,21 @@
                         <input type="text" name="title[<?php echo $language['language_id']; ?>][title]" placeholder="Title" id="input-heading<?php echo $language['language_id']; ?>" value="<?php echo isset($title[$language['language_id']]['title']) ? $title[$language['language_id']]['title'] : ''; ?>" class="form-control" />
                       </div>
                     </div>
+
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>">Description</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="description[<?php echo $language['language_id']; ?>][description]" placeholder="Title" id="input-heading<?php echo $language['language_id']; ?>" value="<?=$descripton;?>" class="form-control" />
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>">Link</label>
+                      <div class="col-sm-10">
+                        <input type="text" name="link[<?php echo $language['language_id']; ?>][link]" placeholder="Title" id="input-heading<?php echo $language['language_id']; ?>" value="<?=$link;?>" class="form-control" />
+                      </div>
+                    </div>
+
                   </div>
                 <?php } ?>
               </div>
@@ -76,13 +91,13 @@
                 $('#language a:first').tab('show');
               //--></script>
           </div>
-    
+
           <div class="form-group">
             <div class="col-sm-12">
 
               <h3>
                 <button id="add_category" class="btn btn-warning text-left" style="white-space: normal; display: inline-block; vertical-align: middle;position: relative;top: -2px;" >
-                  <i class="fa fa-plus-circle"></i>   
+                  <i class="fa fa-plus-circle"></i>
                   Add Category Tab
                 </button>
                  &nbsp;&nbsp;Category Tabs
@@ -124,7 +139,7 @@
                                 <select name="tabs[<?= $body_i; ?>][category_id]" class="form-control">
                                     <option value="">None</option>
                                     <?php foreach($category_list as $each){ ?>
-                                      <option value="<?= $each['category_id']; ?>" 
+                                      <option value="<?= $each['category_id']; ?>"
                                         <?= $tab['category_id']==$each['category_id']?'selected':''; ?>
                                         ><?= $each['name']; ?></option>
                                     <?php } ?>
@@ -147,17 +162,17 @@
                                 </div>
                             </div>
                         </div>
-            
+
                         <!-- Status -->
                         <div class="form-group">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Tab Status</label>
                                 <div class="col-sm-10">
                                     <select name="tabs[<?= $body_i; ?>][status]" class="form-control">
-                                        <option value="1" 
+                                        <option value="1"
                                             <?= $tab['status']?'selected':''; ?>
                                             >Enabled</option>
-                                        <option value="0" 
+                                        <option value="0"
                                             <?= !$tab['status']?'selected':''; ?>
                                             >Disabled</option>
                                     </select>
@@ -186,7 +201,7 @@
       li  +=  '   Category Tab [INDEX_PLUS_ONE]';
       li  +=  ' </a>';
       li  +=  '</li>';
-      
+
   var body  =   '<div class="tab-pane" id="tab-category-[INDEX]">';
 
       // Tab Name
@@ -244,18 +259,18 @@
     // Set Html
     var li_to_add = li.replace('[INDEX_PLUS_ONE]', index_plus_one);
     li_to_add = li_to_add.split('[INDEX]');
-    li_to_add = li_to_add.join(index);    
+    li_to_add = li_to_add.join(index);
 
     var body_to_add = body.split('[INDEX]');
     body_to_add = body_to_add.join(index);
-    
+
     // Append Html
     $('#category_tabs').append(li_to_add);
     $('#category_body').append(body_to_add);
 
     // Switch to new tab;
     $('#category_tabs a[href="#tab-category-'+index+'"]').tab('show');
-    
+
     // Auto Complete Products in tab
     autoComplete(index);
 
@@ -287,17 +302,17 @@
       },
       select: function(item) {
         $('#input-product-'+$index).val('');
-        
+
         $('#featured-product-' + $index + '-' + item['value']).remove();
-        
+
         var $row  =   '<div id="featured-product-' + $index + '-' + item['value'] + '">';
             $row  +=  '   <i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="tabs['+$index+'][product_ids][]" value="' + item['value'] + '" />';
             $row  +=  '</div>';
 
-        $('#category_tab_products_' + $index).append($row);	
+        $('#category_tab_products_' + $index).append($row);
       }
     });
-      
+
     $('#category_tab_products_' + $index).delegate('.fa-minus-circle', 'click', function() {
       $(this).parent().remove();
     });

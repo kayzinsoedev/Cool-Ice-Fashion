@@ -22,4 +22,4 @@ $_['text_telephone']    = 'Tel';
 $_['text_fax']          = 'Fax';
 $_['text_email']        = 'Email';
 
-$_['text_fcs']      = '<span class="fcs" ><a href="https://www.firstcom.com.sg/" target="_blank" >Web Design</a> by Firstcom Solutions</span>';
+$_['text_fcs']          = '<span class="fcs" ><a href="https://www.firstcom.com.sg/services/ecommerce" target="_blank" >Ecommerce Web Design</a> by <a href="https://www.firstcom.com.sg" target="_blank">Firstcom Solutions</a></span>';

@@ -1,13 +1,13 @@
 <div id="cart" class="relative slide-out-cart" > <!-- add/remove class slide-out-cart for normal opencart cart dropdown-->
     <a data-toggle="dropdown" class="cart-dropdown pointer" id="cart_dropdown_icon" onclick="$('body, #cart').toggleClass('open-custom');" >
-      <img src="image/cssbackground/cart.png" width="20px"/>
+      <img src="image/cssbackground/header-cart.png" width="20px"/>
       <span class="badge" >
         <span id="cart-quantity-total" ><?= $total_item; ?></span>
       </span>
     </a>
 
     <ul class="dropdown-menu pull-right"  >
-      
+
       <div class="cart-header">
         <div class="cart-header-text"><?= $text_my_cart; ?></div>
         <button type="button" class="pointer cart_close" onclick="$('#cart_dropdown_icon').click(); return false;" ></button>
@@ -33,7 +33,7 @@
               <div class="item-details">
                 <button type="button" onclick="cart.remove('<?= $product['cart_id']; ?>');" title="<?= $button_remove; ?>" class="btn btn-danger no-custom pull-right">
                   <i class="fa fa-times"></i>
-                </button> 
+                </button>
 
                 <a class="item-name" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
                 <div class="item-option">
@@ -44,7 +44,7 @@
                     <?php } ?>
 
                   <?php } ?>
-                  
+
                   <?php if ($product['recurring']) { ?>
                     <br/><small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
                   <?php } ?>
@@ -62,7 +62,7 @@
                   </span>
                 </div>
               </div>
-            
+
 
           </div>
         <?php } ?>

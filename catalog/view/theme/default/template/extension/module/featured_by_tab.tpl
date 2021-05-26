@@ -2,10 +2,12 @@
 
   <div class="container">
     <h2 class="target-heading" ><?= $heading_title; ?></h2>
+    <p class="new-arrivals-title"><?=$description;?>
   </div>
 
-  <ul class="nav nav-pills margin-auto table width-auto">      
+  <ul class="nav nav-pills margin-auto table width-auto">
     <?php foreach ($tabs as $index => $tab) { ?>
+      <span class="outline"></span>
       <li <?php if(!$index){ ?>class="active"<?php } ?> >
         <a data-toggle="tab" href="#fc<?= $index; ?>-tab-content"><?= $tab['tab_name']?$tab['tab_name']:$tab['name']; ?></a>
       </li>
@@ -31,11 +33,17 @@
               </div>
             <?php }  ?>
           </div>
-        </div> 
+        </div>
       </div>
     <?php } ?>
   </div>
 
   <?= $slider_script; ?>
+
+
+  <div class="view-all-btn">
+    <a class="view-all-btn-link">View All</a>
+  </div>
+
 
 </div>

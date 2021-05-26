@@ -3,7 +3,7 @@
   <div class="page-header">
     <div class="container-fluid">
       <div class="pull-right">
-        <button type="submit" form="form-banner" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary"><i class="fa fa-save"></i></button>
+        <button type="button" data-toggle="tooltip" title="<?php echo $button_save; ?>" class="btn btn-primary btn-submit" onclick="$('#form-banner').submit();"><i class="fa fa-save"></i></button>
         <a href="<?php echo $cancel; ?>" data-toggle="tooltip" title="<?php echo $button_cancel; ?>" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
       <h1><?php echo $heading_title; ?></h1>
       <ul class="breadcrumb">
@@ -73,15 +73,39 @@
                   <?php if (isset($banner_images[$language['language_id']])) { ?>
                   <?php foreach ($banner_images[$language['language_id']] as $banner_image) { ?>
                   <tr id="image-row<?php echo $image_row; ?>">
-                    <td class="text-left"><input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][title]" value="<?php echo $banner_image['title']; ?>" placeholder="<?php echo $entry_title; ?>" class="form-control" />
+                    <td class="text-left">
+                      <span class="extras">
+                        <p>Title Top</p>
+                        <textarea rows="3" class="form-control" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][title2]" ><?php echo $banner_image['title2']; ?></textarea>
+                      </span>
+
+                      <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][title]" value="<?php echo $banner_image['title']; ?>" placeholder="<?php echo $entry_title; ?>" class="form-control" />
                       <?php if (isset($error_banner_image[$language['language_id']][$image_row])) { ?>
                       <div class="text-danger"><?php echo $error_banner_image[$language['language_id']][$image_row]; ?></div>
                       <?php } ?>
                     <span class="extras">
                       <hr/>
-                      <p>Description</p>	
+                      <p>Description</p>
                       <textarea rows="3" class="form-control" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][description]" ><?php echo $banner_image['description']; ?></textarea>
                     </span>
+                    <span class="extras">
+                      <hr/>
+                      <p>Text Align</p>
+                      <select name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][textalign]" class="form-control">
+                        <option value="left" <?php echo ($banner_image['textalign']=="left" )?'selected':''; ?> > Left
+                        </option>
+                        <option value="center" <?php echo ($banner_image['textalign']=="center" )?'selected':''; ?> > Center </option>
+                        <option value="right" <?php echo ($banner_image['textalign']=="right" )?'selected':''; ?> > Right </option>
+                      </select>
+                    </span>
+                    <span class="extras">
+                      <p>Margin Bottom</p>
+                      <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][padleft]" value="<?php echo $banner_image['padleft']; ?>" placeholder="Label" class="form-control" />
+                    </span>
+                    <!-- <span class="extras">
+                      <p>Padding Right</p>
+                      <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][padright]" value="<?php echo $banner_image['padright']; ?>" placeholder="Label" class="form-control" />
+                    </span> -->
                     </td>
                     <td class="text-left">
                     <span class="extras">
@@ -89,7 +113,11 @@
                       <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][link_text]" value="<?php echo $banner_image['link_text']; ?>" placeholder="Label" class="form-control" />
                     <p>Link</p>
                     </span>
-                    <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>
+                    <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][link]" value="<?php echo $banner_image['link']; ?>" placeholder="<?php echo $entry_link; ?>" class="form-control" />
+                      <p>Label Color</p>
+                      <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][font_color]" value="<?php echo $banner_image['font_color']; ?>" placeholder="Label Color" class="form-control" />
+
+                   </td>
                     <td class="text-center"><a href="" id="thumb-image-<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $banner_image['thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                       <input type="hidden" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][image]" value="<?php echo $banner_image['image']; ?>" id="input-image<?php echo $image_row; ?>" />
                     <hr/>
@@ -103,8 +131,8 @@
                         <option value="dark_image" <?php echo ($banner_image['color_theme']=="dark_image" )?'selected':''; ?> > Dark </option>
                       </select>
                     </div>
-                     
-                    
+
+
                     </td>
                     <td class="text-center"><a href="" id="thumb-mobile-image-<?php echo $image_row; ?>" data-toggle="image" class="img-thumbnail"><img src="<?php echo $banner_image['mobile_thumb']; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a>
                         <input type="hidden" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][mobile_image]" value="<?php echo $banner_image['mobile_image']; ?>" id="input-mobile-image<?php echo $image_row; ?>" />
@@ -141,21 +169,31 @@
       </div>
     </div>
   </div>
-  
+
   <script type="text/javascript"><!--
 var image_row = <?php echo $image_row; ?>;
 
 function addImage(language_id) {
 	html  = '<tr id="image-row' + image_row + '">';
-  html += '  <td class="text-left"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][title]" value="" placeholder="<?php echo $entry_title; ?>" class="form-control" /><span class="extras"><hr/><p>Description</p><textarea rows="3" class="form-control" name="banner_image[' + language_id + ']['+ image_row +'][description]" ></textarea></span></td>';
-	html += '  <td class="text-left"><span class="extras"><p>Label</p><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link_text]" value="" placeholder="Label" class="form-control" /><p>Link</p></span><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" /></td>';	
+  html += '  <td class="text-left"><textarea rows="3" class="form-control" name="banner_image[' + language_id + '][' + image_row + '][title2]" ></textarea><input type="text" name="banner_image[' + language_id + '][' + image_row + '][title]" value="" placeholder="<?php echo $entry_title; ?>" class="form-control" /><span class="extras"><hr/><p>Description</p><textarea rows="3" class="form-control" name="banner_image[' + language_id + ']['+ image_row +'][description]" ></textarea></span>
+  <p>Text Align</p><select name="banner_image[' + language_id + '][' + image_row + '][textalign]" class="form-control">
+                        <option value="left"> Left</option>
+                        <option value="center"> Center </option>
+                        <option value="right"> Right </option>
+                      </select>
+                      <p>Margin Bottom</p>
+                      <input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][padleft]" value="" placeholder="Label" class="form-control" />
+                      </td>';
+	html += '  <td class="text-left"><span class="extras"><p>Label</p><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link_text]" value="" placeholder="Label" class="form-control" /><p>Link</p></span><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link]" value="" placeholder="<?php echo $entry_link; ?>" class="form-control" />
+          <p>Label Color</p><input type="text" name="banner_image[<?php echo $language['language_id']; ?>][<?php echo $image_row; ?>][font_color]" value="" placeholder="Label Color" class="form-control" />
+        </td>';
 	html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="banner_image[' + language_id + '][' + image_row + '][image]" value="" id="input-image' + image_row + '" /><hr/>';
   html += '<div class="input-group">';
   html += ' <div class="input-group-addon">Background&nbsp;Type</div>';
-  
+
   html += '<select name="banner_image[' + language_id + '][' + image_row + '][color_theme]" class="form-control" ><option value="light_image" >Light</option><option value="dark_image" >Dark</option></select></div></td>';
   html += '  <td class="text-center"><a href="" id="thumb-mobile-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="banner_image[' + language_id + '][' + image_row + '][mobile_image]" value="" id="input-mobile-image' + image_row + '" /><hr/>';
-  
+
   html += '<div class="input-group">';
   html += ' <div class="input-group-addon">Background&nbsp;Type</div>';
 
@@ -163,14 +201,14 @@ function addImage(language_id) {
 	html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + ', .tooltip\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';
-	
+
 	$('#images' + language_id + ' tbody').append(html);
-	
+
 	image_row++;
 }
-//--></script> 
+//--></script>
   <script type="text/javascript"><!--
 $('#language a:first').tab('show');
-//--></script> 
+//--></script>
 </div>
-<?php echo $footer; ?> 
+<?php echo $footer; ?>

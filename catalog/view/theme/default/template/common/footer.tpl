@@ -13,6 +13,11 @@
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
 </script>
+
+<!-- custom css -->
+<link href="catalog/view/theme/default/stylesheet/custom.css" rel="stylesheet">
+<!-- custom css -->
+
 <!-- /WhatsHelp.io widget -->
 <?php if($mailchimp){ ?>
 <!--	<div class="newsletter-section text-center">
@@ -25,78 +30,99 @@
             <div class="footer_box">
 		<div class="footer-upper-contet">
 
+
+      <div class="footer-contact-info">
+				<h5><?= $store; ?></h5>
+				<p class="m0 footer-content-info">
+				<?= $text_address; ?>: <?= $address; ?><br/><br/>
+				Tel: <a href="tel:<?= $telephone; ?>" ><?= $telephone; ?></a><br/>
+				<?php if($fax){ ?>
+					<?= $text_fax; ?>: <a href="fax:<?= $fax; ?>" ><?= $fax; ?></a><br/>
+				<?php } ?>
+				Email: <a href="mailto:<?= $email; ?>" ><?= $email; ?></a><br/>
+				</p>
+			</div>
+
+
 			<?php if ($menu) { ?>
                             <?php foreach($menu as $links){ ?>
 				<div class="footer-contact-links">
 					<h5>
-                                            <?php if($links['href'] != '#'){ ?>
+            <?php if($links['href'] != '#'){ ?>
 						<?= $links['name']; ?>
-                                            <?php }else{ ?>
-						<a href="<?= $links['href']; ?>" 
-                                                    <?php if($links['new_tab']){ ?>
-                                                        target="_blank"
-                                                    <?php } ?>
-                                                >
-                                                <?= $links['name']; ?></a>
-                                            <?php } ?>
+            <?php }else{ ?>
+						<a href="<?= $links['href']; ?>"
+              <?php if($links['new_tab']){ ?>
+                    target="_blank"
+                <?php } ?>
+            >
+            <?= $links['name']; ?></a>
+          <?php } ?>
 					</h5>
-                                    <?php if($links['child']){ ?>
+          <?php if($links['child']){ ?>
 					<ul class="list-unstyled">
 						<?php foreach ($links['child'] as $each) { ?>
 						<li><a href="<?= $each['href']; ?>"
 							<?php if($each['new_tab']){ ?>
 								target="_blank"
 							<?php } ?>
-							
+
 							>
 								<?= $each['name']; ?></a></li>
 						<?php } ?>
 					</ul>
-                                    <?php } ?>
+            <?php } ?>
 				</div>
-                            <?php } ?>
+          <?php } ?>
 			<?php } ?>
 			<?php if($mailchimp){ ?>
                     <?= $mailchimp; ?>
             <?php }else{ ?>
-                <div id="mi1965283135" class="mailchimp-integration box" style="flex:1!important;"> 
-                    <div class="box-heading"> </div> 
+                <div id="mi1965283135" class="mailchimp-integration box" style="flex:1!important;">
+                    <div class="box-heading"> </div>
                     <div class="box-content">
-                    </div> 
+                    </div>
                     <?php if($social_icons){ ?>
                         <div class="footer-social-icons">
-                                <?php foreach($social_icons as $icon){ ?>
-                                <a href="<?= $icon['link']; ?>" title="<?= $icon['title']; ?>" alt="
-                                        <?= $icon['title']; ?>" target="_blank">
-                                        <img src="<?= $icon['icon']; ?>" title="<?= $icon['title']; ?>" class="img-responsive" alt="<?= $icon['title']; ?>" />
-                                </a>
-                                <?php } ?>
+                              <?php foreach($social_icons as $icon){ ?>
+                              <a href="<?= $icon['link']; ?>" title="<?= $icon['title']; ?>" alt="
+                                      <?= $icon['title']; ?>" target="_blank">
+                                      <img src="<?= $icon['icon']; ?>" title="<?= $icon['title']; ?>" class="img-responsive" alt="<?= $icon['title']; ?>" />
+                              </a>
+                              <?php } ?>
+
                         </div>
                     <?php } ?>
                 </div>
             <?php } ?>
-                    
+
 		</div>
-		
-		<hr/>
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 text-center">
-				<p><?= $powered.". ".$text_right; ?></p>
-			</div>
-			<div class="col-xs-12 col-sm-12 text-sm-right footer_text">
-				<p><?php //$text_fcs; ?></p>
-			</div>
-		</div>
-            </div>
+
+  </div>
+
+      <div class="row footer-div">
+        <div class="col-xs-12 col-sm-6 text-center footer-power">
+          <p><?= $powered.". ".$text_right; ?></p>
+        </div>
+        <div class="col-xs-12 col-sm-6 text-sm-right footer_text">
+          <p><?= $text_fcs; ?></p>
+        </div>
+      </div>
+
 	</div>
+
+  <!-- <div class="container">
+
+  </div> -->
+
 </footer>
 </div>
 <div id="ToTopHover" ></div>
 <script>AOS.init({
 	once: true
 });</script>
-<?php 
+<?php
 /* extension bganycombi - Buy Any Get Any Product Combination Pack */
-echo $bganycombi_module; 
+echo $bganycombi_module;
 ?>
 </body></html>

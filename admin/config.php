@@ -35,7 +35,7 @@ define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_DATABASE', 'fcscomme_demo10');
+define('DB_DATABASE', 'cool-ice-fashion');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'j5ui84yug_yng8e54e_');
 

@@ -1,7 +1,7 @@
 <?php
 class ControllerExtensionModuleSlideshow extends Controller {
 	public function index($setting) {
-		static $module = 0;		
+		static $module = 0;
 
 		$this->load->model('design/banner');
 		$this->load->model('tool/image');
@@ -23,6 +23,7 @@ class ControllerExtensionModuleSlideshow extends Controller {
 		$data['autoplayspeed'] = $setting['autoplayspeed'];
 
 		foreach ($results as $result) {
+
 			if (is_file(DIR_IMAGE . $result['image'])) {
 
 				// Windows server might need to explode: \r or \r\n or \n
@@ -31,7 +32,7 @@ class ControllerExtensionModuleSlideshow extends Controller {
 				if(trim($result['description']) != ''){
 					$spliter = "\n";
 					$result['description'] = explode($spliter, $result['description']);
-					
+
 					foreach($result['description'] as $index => &$each){
 						$each = '<span class="slideshow-text-' . $index . '">' . $each . '</span>';
 					}
@@ -51,13 +52,20 @@ class ControllerExtensionModuleSlideshow extends Controller {
 					'theme' 		=> $result['color_theme'],
 					'mobile_theme' 	=> 'mobile_' . $result['mobile_color_theme'],
 					'image' 		=> $this->model_tool_image->resize(
-										$result['image'], 
-										$setting['width'], 
+										$result['image'],
+										$setting['width'],
 										$setting['height'], 'a'),
+					// 'image' 		=> 'image/'.$result['image'],
 					'mobile_image' 	=> $this->model_tool_image->resize(
-										$result['mobile_image'], 
-										$setting['mobile_width'], 
-										$setting['mobile_height'], 'h')
+										$result['mobile_image'],
+										$setting['mobile_width'],
+										$setting['mobile_height'], 'h'),
+					'watermark_icon'	=> $this->config->get('config_watermark_icon'),
+					'textalign'		=> $result['textalign'],
+					'font_color'	=> $result['font_color'],
+					'title2'	=> $result['title2'],
+					'padleft'	=> $result['padleft'],
+					'padright'	=> $result['padright'],
 				);
 			}
 		}

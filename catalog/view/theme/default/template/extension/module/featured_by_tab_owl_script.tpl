@@ -19,11 +19,13 @@
       var owl<?= $uqid; ?> =  $("#fc_tab_slider_<?= $uqid; ?>-"  + $index).owlCarousel({
         items: 4,
         margin: 0,
-        loop: true,
+        loop: false,
         dots: false,
         nav: true,
         navText: [
-                  '<div class="standard_nav_left owl_position left_'+$index+' pointer"></div>', 
+                  // '<div class="standard_nav_left owl_position left_'+$index+' pointer"><img src="image/catalog/general/prev-purple.png"></div>',
+                  // '<div class="standard_nav_right owl_position right_'+$index+' pointer"><img src="image/catalog/general/next-purple.png"></div>'
+                  '<div class="standard_nav_left owl_position left_'+$index+' pointer"></div>',
                   '<div class="standard_nav_right owl_position right_'+$index+' pointer"></div>'
                 ],
         responsive: {
@@ -65,7 +67,7 @@
                 $btn_cart.attr('onclick', $onclick);
               }
           });
-          
+
           // Update add-to-cart
           $(window).resize();
 
@@ -85,7 +87,7 @@
 
           $content_width += $content_margin;
           $content_width -= $single_margin;
-          
+
           //cl($content_width);
           //cl($slider_window_view_width);
 
@@ -96,13 +98,13 @@
           }
 
         },
-        onRefreshed: function(){ 
+        onRefreshed: function(){
           $("#fc_tab_slider_<?= $uqid; ?>"+$index+" .owl-item .product-layout .product-thumb").removeAttr("style");
 
           var height = 0;
 
           $("#fc_tab_slider_<?= $uqid; ?> .owl-item").each(function(){
-            if(height < $(this).height()) height = $(this).height();            
+            if(height < $(this).height()) height = $(this).height();
           });
 
           $("#fc_tab_slider_<?= $uqid; ?>-"+$index+" .owl-item .product-layout .product-thumb").css('min-height', height);

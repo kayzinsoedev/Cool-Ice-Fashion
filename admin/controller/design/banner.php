@@ -386,19 +386,24 @@ class ControllerDesignBanner extends Controller {
 					$mobile_image = '';
 					$mobile_thumb = 'no_image.png';
 				}
-				
+
 				$data['banner_images'][$key][] = array(
 					'title'      => $banner_image['title'],
 					'description'=> $banner_image['description'],
 					'link_text'  => $banner_image['link_text'],
 					'link'       => $banner_image['link'],
-					'color_theme'=> $banner_image['color_theme'], 
+					'color_theme'=> $banner_image['color_theme'],
 					'mobile_color_theme'=> $banner_image['mobile_color_theme'],
 					'image'      => $image,
 					'thumb'      => $this->model_tool_image->resize($thumb, 100, 100),
 					'mobile_image'      => $mobile_image,
 					'mobile_thumb'      => $this->model_tool_image->resize($mobile_thumb, 100, 100),
-					'sort_order' => $banner_image['sort_order']
+					'sort_order' => $banner_image['sort_order'],
+					'textalign'	 => $banner_image['textalign'],
+					'font_color' => $banner_image['font_color'],
+					'title2' => $banner_image['title2'],
+					'padright' => $banner_image['padright'],
+					'padleft' => $banner_image['padleft']
 				);
 			}
 		}
@@ -424,9 +429,9 @@ class ControllerDesignBanner extends Controller {
 		if (isset($this->request->post['banner_image'])) {
 			foreach ($this->request->post['banner_image'] as $language_id => $value) {
 				foreach ($value as $banner_image_id => $banner_image) {
-					if ((utf8_strlen($banner_image['title']) < 2) || (utf8_strlen($banner_image['title']) > 64)) {
-						$this->error['banner_image'][$language_id][$banner_image_id] = $this->language->get('error_title');
-					}
+					// if ((utf8_strlen($banner_image['title']) < 2) || (utf8_strlen($banner_image['title']) > 64)) {
+					// 	$this->error['banner_image'][$language_id][$banner_image_id] = $this->language->get('error_title');
+					// }
 				}
 			}
 		}

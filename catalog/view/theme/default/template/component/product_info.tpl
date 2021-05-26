@@ -1,31 +1,31 @@
 <div class="product-block <?= $out_of_stock; ?>">
 	<div class="product-image-block relative image-zoom-hover">
 		<?php if($sticker && $sticker['name']){ ?>
-		<a 
-		href="<?= $href; ?>" 
-		title="<?= $name; ?>" 
-		class="sticker absolute" 
+		<a
+		href="<?= $href; ?>"
+		title="<?= $name; ?>"
+		class="sticker absolute"
 		style="color: <?= $sticker['color']; ?>; background-color: <?= $sticker['background-color']; ?>; opacity: 0.8; border-bottom-right-radius: 25px; border-top-right-radius: 25px; padding: 12px 15px; font-weight: bold;">
 			<?= $sticker['name']; ?>
 		</a>
 		<?php } ?>
 		<?php if($out_of_stock != ""){ ?>
-		<a 
-		href="<?= $href; ?>" 
-		title="<?= $name; ?>" 
-		class="sticker absolute float-right" 
+		<a
+		href="<?= $href; ?>"
+		title="<?= $name; ?>"
+		class="sticker absolute float-right"
 		style="color:#fff; background-color:#b5b5b5; left:auto; right:0!important; padding:3px 8px!important;">
 			<?= "Sold Out"; ?>
 		</a>
 		<?php } ?>
-		<a 
-			href="<?= $href; ?>" 
-			title="<?= $name; ?>" 
+		<a
+			href="<?= $href; ?>"
+			title="<?= $name; ?>"
 			class="product-image image-container relative" >
 
-			<img 
-				src="<?= $thumb; ?>" 
-				alt="<?= $name; ?>" 
+			<img
+				src="<?= $thumb; ?>"
+				alt="<?= $name; ?>"
 				title="<?= $name; ?>"
 				class="img-responsive" />
 
@@ -35,9 +35,41 @@
 			</div>-->
 			<?php } ?>
 		</a>
-                <div class="btn-group product-button">
+                <!-- <div class="btn-group product-button">
                     <img onclick="window.location.href='<?= $href; ?>'" src="image/cssbackground/searh.png" class="pointer">
-                </div>
+                </div> -->
+
+								<div class="btn-group product-button">
+										<?php if ($options) { ?>
+											<button type="button"
+												<?php if($enquiry){ ?>
+													class="btn btn-default btn-enquiry btn-enquiry-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>"
+												<?php }else{ ?>
+													class="btn btn-default btn-cart btn-cart-<?= $product_id; ?>" data-product-id="<?= $product_id; ?>"
+												<?php } ?>
+												>
+												<i class="fa fa-shopping-cart"></i>Add to cart
+											</button>
+										<?php } else { ?>
+											<button type="button"
+												<?php if($enquiry){ ?>
+													onclick="enquiry.add('<?= $product_id; ?>', '<?= $minimum; ?>');"
+												<?php }else{ ?>
+													onclick="cart.add('<?= $product_id; ?>', '<?= $minimum; ?>');"
+												<?php } ?>
+												class="btn btn-default custom-cart-div">
+												<i class="fa fa-shopping-cart"></i>Add to cart
+											</button>
+										<?php } ?>
+										<button type="button" onclick="wishlist.add('<?= $product_id; ?>');" class="btn wishlist-btn btn-default product_wishlist_<?= $product_id; ?>">
+											<!-- <i class="fa <?= in_array($product_id, $wishlist) ?'fa-heart':'fa-heart-o';?>"></i> -->
+											Add Wishlist
+										</button>
+										<button type="button" onclick="compare.add('<?= $product_id; ?>');" class="btn btn-default hide">
+											<i class="fa fa-exchange"></i>
+										</button>
+									</div>
+
 <!--		<div class="btn-group product-button">
 			<button
 				type="button"
@@ -49,7 +81,7 @@
 				class="btn btn-default">
 				<i class="fa fa-shopping-cart"></i>
 			</button>
-			
+
 			data-toggle="tooltip"
 			<?php if($enquiry){ ?>
 				title="<?= $button_enquiry; ?>"
@@ -58,26 +90,26 @@
 				title="<?= $button_cart; ?>"
 				onclick="cart.add('<?= $product_id; ?>', '<?= $minimum; ?>');"
 			<?php } ?>
-			
-			<button 
-				type="button" 
+
+			<button
+				type="button"
 				onclick="wishlist.add('<?= $product_id; ?>');" class="btn btn-default">
 				<i class="fa fa-heart"></i>
 			</button>
-			
-			data-toggle="tooltip" 
-			title="<?= $button_wishlist; ?>" 
-			
-			<button 
-				type="button" 
-				
+
+			data-toggle="tooltip"
+			title="<?= $button_wishlist; ?>"
+
+			<button
+				type="button"
+
 				onclick="compare.add('<?= $product_id; ?>');" class="btn btn-default">
 				<i class="fa fa-exchange"></i>
 			</button>
-			
-			data-toggle="tooltip" 
-			title="<?= $button_compare; ?>" 
-			
+
+			data-toggle="tooltip"
+			title="<?= $button_compare; ?>"
+
 		</div>-->
 	</div>
 	<div class="product-name">
@@ -99,7 +131,7 @@
 	<div class="product-details">
 		<?php if ($price && !$enquiry) { ?>
 			<div class="price">from
-                            <span class="price-ori">	
+                            <span class="price-ori">
                                 <?php if (!$special) { ?>
                                     <?= $price; ?>
 				<?php } else { ?>
@@ -121,7 +153,7 @@
 	<div class="product-description">
             <?= $description; ?>
 	</div>
-        <button
+        <!-- <button
             type="button"
             <?php if($enquiry){ ?>
                     onclick="window.location.href='<?= $href; ?>';"
@@ -132,9 +164,5 @@
                     class="btn btn-default">
                     <img src="image/cssbackground/cart-copy.png" style="width:20px;"></i> <?= $text_add_cart; ?>
             <?php } ?>
-        </button>
+        </button> -->
 </div>
-
-
-
-

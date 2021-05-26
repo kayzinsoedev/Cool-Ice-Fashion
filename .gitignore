@@ -1,0 +1,4 @@
+/.idea
+/system/storage/cache
+/image/cache/*
+/image/catalog/.tmb

@@ -1,37 +1,37 @@
 <?php
 	class ControllerCommonHeader extends Controller {
 		public function index() {
-		
+
 			$data['actual_link'] = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
 			$google_map = $this->cache->get('google_map');
-			
+
 			// Load Facebook
 			$this->facebookPixel($data);
 
 			// Analytics
 			$this->load->model('extension/extension');
-			
+
 			$data['analytics'] = array();
-			
+
 			$analytics = $this->model_extension_extension->getExtensions('analytics');
-			
+
 			foreach ($analytics as $analytic) {
 				if ($this->config->get($analytic['code'] . '_status')) {
 					$data['analytics'][] = $this->load->controller('extension/analytics/' . $analytic['code'], $this->config->get($analytic['code'] . '_status'));
 				}
 			}
-			
+
 			$server = $this->config->get('config_url');
-			
+
 			if ($this->request->server['HTTPS']) {
 				$server = $this->config->get('config_ssl');
 			}
-	
+
 			if (is_file(DIR_IMAGE . $this->config->get('config_icon'))) {
 				$this->document->addLink($server . 'image/' . $this->config->get('config_icon'), 'icon');
 			}
-			
+
 			$data['meta_store'] = $this->config->get('config_store');
 			$data['schema_json_code'] = $this->document->getSchema();
 
@@ -40,7 +40,7 @@
 			}
 
 			$data['title'] = $this->document->getTitle();
-			
+
 			$data['base'] = $this->url->fix_url($server);
 			$data['description'] = $this->document->getDescription();
 			$data['keywords'] = $this->document->getKeywords();
@@ -49,33 +49,33 @@
 			$data['scripts'] = $this->document->getScripts();
 			$data['lang'] = $this->language->get('code');
 			$data['direction'] = $this->language->get('direction');
-			
+
 			$data['name'] = $this->config->get('config_name');
 
 			$data['seo_enabled'] = $this->config->get('config_seo_url');
-			
+
 			$data['logo'] = '';
 
 			if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
 				$data['logo'] = $server . 'image/' . $this->config->get('config_logo');
 			}
-			
+
 			$this->load->language('common/header');
-			
+
 			$data['text_home'] = $this->language->get('text_home');
-			
+
 			// Wishlist
 			$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), (isset($this->session->data['wishlist']) ? count($this->session->data['wishlist']) : 0));
-			
+
 			if ($this->customer->isLogged()) {
 				$this->load->model('account/wishlist');
-				
+
 				$data['text_wishlist'] = sprintf($this->language->get('text_wishlist'), $this->model_account_wishlist->getTotalWishlist());
 			}
-			
+
 			$data['text_shopping_cart'] = $this->language->get('text_shopping_cart');
 			$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
-			
+
 			$data['text_login_register'] = $this->language->get('text_login_register');
 			$data['text_account'] = $this->language->get('text_account');
 			$data['text_register'] = $this->language->get('text_register');
@@ -87,7 +87,7 @@
 			$data['text_checkout'] = $this->language->get('text_checkout');
 			$data['text_category'] = $this->language->get('text_category');
 			$data['text_all'] = $this->language->get('text_all');
-			
+
 			$data['home'] = $this->url->link('common/home');
 			$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 			$data['logged'] = $this->customer->isLogged();
@@ -103,14 +103,14 @@
 			$data['contact'] = $this->url->link('information/contact');
 			$data['flavours'] = $this->url->link('information/information','&information_id=8');
 			$data['telephone'] = $this->config->get('config_telephone');
-			
+
 			// For page specific css
-			
+
 			$data['class'] = 'common-home';
-			
+
 			if (isset($this->request->get['route'])) {
 				$class = '';
-				
+
 				if (isset($this->request->get['product_id'])) {
 					$class = ' pid-' . $this->request->get['product_id'];
 				}
@@ -129,19 +129,19 @@
 				elseif (isset($this->request->get['news_id'])) {
 					$class = ' nid-' . $this->request->get['news_id'];
 				}
-				
+
 				$data['class'] = str_replace('/', '-', $this->request->get['route']) . $class;
 			}
-			
+
 			// Social Media Sharing
 
 			$this->loadSocialTags($data, $server);
 
 			$theme = $this->config->get('config_theme');
 			$menu_id = $this->config->get($theme . "_header");
-			
+
 			$menu = $this->load->controller('common/menu', $menu_id);
-                        
+
 			$this->fill_sub_categories($menu);
 
 			$data['menu'] = $this->craftHtml($menu);
@@ -154,10 +154,10 @@
 				'currency'			=>	'common/currency',
 				'search'			=>	'common/search',
 				'cart'				=>	'common/cart',
-				
+
 				'enquiry'			=>	'common/enquiry',
 			);
-			foreach($controllers as $var => $controller) 
+			foreach($controllers as $var => $controller)
 				$data[$var]	=$this->load->controller($controller);
 
 			// Load Parts
@@ -167,18 +167,18 @@
 
 				'head_tags'			=>	'common/header/_head_meta',
 				'login_part'		=>	'common/header/login',
-				'wishlist'			=>	'', //'common/header/wishlist',
+				'wishlist'			=>	'common/header/wishlist',
 				'pop_up_search'		=>	'common/header/search_pop_up',	//	Note: echo $search for non popup search box
-			); 
+			);
 
-			foreach($parts as $var => $part) 
+			foreach($parts as $var => $part)
 				$data[$var]	=$this->load->view($part, $data);
 
 			// Load Page Banner
 			$data['page_banner'] = $this->load->controller('component/page_banner');
 
 			$data['isMobile'] = $this->mobile_detect->isMobile()?'mobile':'desktop';
-			
+
 
 			// Moz in mac handler
 			$os = getenv("HTTP_USER_AGENT"); //debug($os);
@@ -187,21 +187,23 @@
 			if(strpos('_' . $os, 'macintosh') || strpos('_' . $os, 'mac')){
 				$data['isMobile'] .= ' mac-browser';
 			}
-			
+
 	        $this->load->library('modulehelper');
             $Modulehelper = Modulehelper::get_instance($this->registry);
 
             $language_id = $this->config->get('config_language_id');
-        
+
             $modulename  = 'header_text';
             $data['header_icon'] = $this->modulehelper->get_field ( $this, $modulename, $language_id, "image");
             $data['header_title'] = $this->modulehelper->get_field ( $this, $modulename, $language_id, "title");
+
+			$data['social_icons'] = $this->load->controller('component/social_icons');
 
 			return $this->load->view('common/header/header', $data);
 		}
 
 		private function craftMobileHtml($menu = array(), $level = 0, $menu_part = 0 ){
-			 
+
 			if(!is_array($menu)){
 				return '';
 			}
@@ -236,8 +238,8 @@
 					$menus .= '	<a href="' . $href . '" alt="' . $name . '" >'.$inner_text.'</a>';
 					$menus .= '	<label for="sub-group-'.$id.'"><i class="fa fa-caret-down" aria-hidden="true"></i></label>';
 					$menus .= $sub_menu;
-				} 
-				else{ 
+				}
+				else{
 					$menus .= '<li class="'.($link['active']?'active':'').'">';
 					$menus .= '	<a href="' . $href . '" alt="' . $name . '" >'.$inner_text.'</a>';
 				}
@@ -246,29 +248,29 @@
 
 				$index++;
 			}
-			
+
 			if($level == 0){
 			    $menus .= '<li class="">';
     			    $menus .= '	<a href="' . $this->url->link('information/information','information_id=8') . '" alt="Flavours In Store" >Flavours In Store</a>';
-    		    $menus .= '</li>';	
+    		    $menus .= '</li>';
             }
 			if( trim($menus) != '' ){
 				if($level){
 					$menus = '<ul>' . $menus . '</ul>';
 				}
 				else{
-					$menus = 
+					$menus =
 					'<ul class="cd-accordion-menu animated">'.
 						$menus.
 					'</ul>';
 				}
 			}
-			
+
 
 			return $menus;
 		}
 		private function craftHtml1($menu = array(), $level = 0, $menu_part = 0 ){
-			
+
 			if(!is_array($menu)){
 				return '';
 			}
@@ -293,7 +295,7 @@
 				if(!$level){
 					$inner_text = '<span>' . $name . '</span>';
 				}
-	
+
 				// $carat = '<div class="caret"></div>';
 				$carat = '';
 
@@ -304,8 +306,8 @@
 					}else{
 						$menus .= '	<a href="'.$href.'" '.$tab_option.' alt="' . $name . '" >' . $inner_text . '</a>' . $sub_menu;
 					}
-				} 
-				else{ 
+				}
+				else{
 					$menus .= '<li class="'.($link['active']?'active':'').'">';
 					$menus .= '	<a href="'.$href.'" '.$tab_option.' alt="' . $name . '" >' . $inner_text . '</a>';
 				}
@@ -320,13 +322,13 @@
 					$menus = '<ul>' . $menus . '</ul>';
 				}
 				else{
-					$menus = 
+					$menus =
 					'<ul id="main-menu" class="sm sm-blue">'.
 						$menus.
 					'</ul>';
 				}
 			}
-			
+
 
 			return $menus;
 		}
@@ -366,7 +368,7 @@
 //                                    if(count($query_break) > 1 && isset($query_break[1]) ){
 //                                            $path	=	(int)$query_break[1];
 //                                    }
-//                                    
+//
 //                                    $sub_menu = '';
 //                                        $sub_menu.= '<div class="dropdown-menu online-shop-menu menu_'.$count.'">';
 //                                            $sub_menu.= '<div id="category_accordion" class="row menu_box_hover">';
@@ -375,8 +377,8 @@
 //                                                $sub_menu.= '<div class="col-md-9 col-sm-8 custom-category-container">';
 //                                                        $sub_menu.= $this->subCraftHtml($link['child'], $level+1);
 //                                                $sub_menu.= '</div>';
-//					
-//                                        
+//
+//
 //                                                $sub_menu.= '<div class="col-md-3 col-sm-4 custom-side-menu">';
 //                                                    $sub_menu.= '<img src="image/cssbackground/default.png" alt="Online Shop" style="width:100%">';
 //                                                        $url = $this->url->link("product/category","path=".$path);
@@ -394,7 +396,7 @@
 				if(!$level){
 					$inner_text = '<span>' . $name . '</span>';
 				}
-	
+
 				// $carat = '<div class="caret"></div>';
 				$carat = '';
 
@@ -406,7 +408,7 @@
 						$menus .= '	<a href="'.$href.'" '.$tab_option.' alt="' . $name . '" >' . $inner_text . '</a>' . $sub_menu;
 					}
 				}
-				else{ 
+				else{
 					$menus .= '<li class="menu_tab '.($link['active']?'active':'').'" pid="'.$count.'">';
 					$menus .= '	<a href="'.$href.'" '.$tab_option.' alt="' . $name . '" >' . $inner_text . '</a>';
 				}
@@ -415,25 +417,25 @@
                                 $count++;
 				$index++;
 			}
-                        
+
             $search = $this->url->link("product/search");
             if($level == 0){
                 $menus .= "<li><a href='".$search."'><img src='image/cssbackground/search.png'/></a></li>";
             }
             //$menus .= "<li class='hidden_flavours'><button class='flavours_button'>Flavours In Store</button></li>";
-                        
+
 			if( trim($menus) != '' ){
 				if($level){
 					$menus = '<ul>' . $menus . '</ul>';
 				}
 				else{
-					$menus = 
+					$menus =
 					'<ul id="main-menu" class="sm sm-blue">'.
 						$menus.
 					'</ul>';
 				}
 			}
-			
+
 
 			return $menus;
 		}
@@ -444,36 +446,36 @@
 			if ($this->config->get('config_image')) {
 				$general_image = $this->config->get('config_image');
 			}
-			
+
 			$data["content_type"] = "website";
-			
+
 			$data["store_name"] = $this->config->get("config_name");
-			
+
 			$sharing_image	= "";
-			
+
 			$data["fb_img"] = "";
 			$data["tw_img"] = "";
 			$data["gp_img"] = "";
-			
+
 			$data['current_page'] = $server;
-			
+
 			if (isset($this->request->get['route'])) {
-			
+
 				if (isset($this->request->get['product_id'])) {
-				
+
 					$data["content_type"] = "article";
-					
+
 					$this->load->model("catalog/product");
-					
+
 					$product_info = $this->model_catalog_product->getProduct((int)$this->request->get['product_id']);
-					
+
 					if($product_info){
 						$sharing_image = $product_info["image"];
-						
+
 						$data['current_page'] = $this->url->link("catalog/product", "product_id=" . $product_info["product_id"], true);
 					}
 				}
-				
+
 			}
 
 			$fb_width = 600;
@@ -484,10 +486,10 @@
 
 			$gp_width = 612;
 			$gp_height = 299;
-			
+
 			$this->load->model("tool/image");
 
-			if($sharing_image){ 	
+			if($sharing_image){
 				$data["fb_img"] = $this->model_tool_image->resize($sharing_image, $fb_width, $fb_height, 'w');
 				$data["tw_img"] = $this->model_tool_image->resize($sharing_image, $tw_width, $tw_height, 'w');
 				$data["gp_img"] = $this->model_tool_image->resize($sharing_image, $gp_width, $gp_height, 'w');
@@ -507,7 +509,7 @@
 		}
 
 		private function facebookPixel(&$data){
-				
+
 			$this->facebookcommonutils = new FacebookCommonUtils();
 			$data['facebook_pixel_id_FAE'] =
 			$this->config->get('facebook_pixel_id');
@@ -568,11 +570,11 @@
 
 				// Skip those that have child or not category page
 				if( $menu['child'] || !strpos($menu['query'], '/category') ) continue;
-				
+
 				$path = 0;
 
 				$query_break = explode('&path=', $menu['query']);
-				
+
 				if(count($query_break) > 1 && isset($query_break[1]) ){
 					$path	=	(int)$query_break[1];
 				}
@@ -580,22 +582,22 @@
 				$menu['columns'] = 5;
 
 				$subs = array();
-                                
+
 				$categories = $this->model_catalog_category->getCategories($path);
-		
+
 				foreach($categories as $category){
 					$subs_childs = array();
 					$active = '';
-					
+
 					$sub_categories = $this->model_catalog_category->getCategories($category['category_id']);
-					
+
 					foreach($sub_categories as $sub_category){
 						$sub_active = '';
-						
+
 						if( in_array($sub_category['category_id'], $current_active_paths) ){
 								$sub_active = 'active';
 						}
-						
+
 						$subs_childs[] = array(
 							'level'		=>	2,
 							'label'		=>	$sub_category['name'],
@@ -607,11 +609,11 @@
 							'href'		=>	$this->url->link('product/category', 'path=' . $path . '_' . $category['category_id'] . '_' . $sub_category['category_id'])
 						);
 					}
-					
+
 					if( in_array($category['category_id'], $current_active_paths) ){
 							$active = 'active';
 					}
-					
+
 					$subs[] = array(
 						'level'		=>	1,
 						'label'		=>	$category['name'],
@@ -623,7 +625,7 @@
 						'href'		=>	$this->url->link('product/category', 'path=' . $path . '_' .$category['category_id'])
 					);
 				}
-				
+
 				$menu['child'] = $subs;
 			}
 		}
@@ -645,7 +647,7 @@
 				$sub_menu = '';
 				if($link['child']){
                                     $sub_menu = '';
-                                    
+
                                     if($level == 2 || $level == 3){
                                             $sub_menu.= '<div id="category_collapse_' . $link['id'] . '" class="collapse in" aria-expanded="true" style="display: content;visibility: visible;">';
                                     }
@@ -659,15 +661,15 @@
 				if(!$level){
 					$inner_text = '<span>' . $name . '</span>';
 				}
-	
+
 				$carat = '<div class="caret"></div>';
 
                                 if($level == 1){
                                     if($sub_menu) {
                                             $menus .= '<div class="col-md-3 col-sm-6 custom-category-box">';
                                             $menus .= '<h4 onclick="window.location.href=\''.$href.'\'" style="cursor:pointer">' . $name . '</h4>'.$sub_menu;
-                                    } 
-                                    else{ 
+                                    }
+                                    else{
                                             $menus .= '<div class="col-md-3 col-sm-6 custom-category-box">';
                                             $menus .= '<h4 onclick="window.location.href=\''.$href.'\'" style="cursor:pointer">' . $name . '</h4>';
                                     }
@@ -676,7 +678,7 @@
                                     $menus.= '<div class="col-sm-12">';
                                     if($sub_menu) {
                                             $menus .= '	<a class="ca" href="javascript:void(0)" data-toggle="collapse" data-target="#category_collapse_'. $link['id']. '">' . $name . '</a>' . $sub_menu;
-                                    }else{ 
+                                    }else{
                                             $menus .= '	<a class="ca no_child" href="'.$href.'">' . $name . '</a>';
                                     }
                                     $menus .= '</div>';
@@ -684,14 +686,14 @@
                                     $menus.= '<div class="col-sm-12">';
                                     if($sub_menu) {
                                             $menus .= '	<a class="ca l4" href="javascript:void(0)" data-toggle="collapse" data-target="#category_collapse_'. $link['id']. '">' . $name . '</a>' . $sub_menu;
-                                    }else{ 
+                                    }else{
                                             $menus .= '	<a class="ca l4 no_child" href="'.$href.'">' . $name . '</a>';
                                     }
                                     $menus .= '</div>';
                                 }else{
                                             $menus .= '	<div><a href="'. $href .'" class="child_category">'  . $name . '</a></div>';
                                 }
-                                
+
 
 				$index++;
 			}
@@ -701,7 +703,7 @@
 //					$menus = '<ul>' . $menus . '</ul>';
 //				}
 //				else{
-//					$menus = 
+//					$menus =
 //					'<ul id="main-menu" class="sm sm-blue header_text">'.
 //						$menus.
 //					'</ul>';
@@ -709,5 +711,5 @@
 //			}
 
 			return $menus;
-		}        
-	} 
+		}
+	}

@@ -1,7 +1,7 @@
 <div id="account" class="dropdown">
 <?php if ($logged) { ?>
     <a href="#" title="<?=$text_account; ?>" class="dropdown-toggle" data-toggle="dropdown">
-        <img src="image/cssbackground/user.png" width="20px"/>
+        <img src="image/cssbackground/header-user.png" width="20px"/>
     </a>
     <ul class="dropdown-menu dropdown-menu-right">
         <li>
@@ -17,7 +17,7 @@
     </ul>
 <?php }else { ?>
     <a href="#" data-toggle="dropdown">
-        <img src="image/cssbackground/user.png" width="20px" />
+        <img src="image/cssbackground/header-user.png" width="20px" />
         <!--<i class="fa fa-user"></i>-->
     </a>
     <ul class="dropdown-menu dropdown-menu-right">

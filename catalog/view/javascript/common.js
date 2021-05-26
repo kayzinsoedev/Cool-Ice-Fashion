@@ -48,7 +48,7 @@ $(document).ready(function() {
         $('.cart_close').on("click",function(){
             $('#wh-widget-send-button').show();
         });
-    
+
         $('.menu_tab').on("mouseover",function(){
             var id = $(this).attr("pid");
             $('.menu_'+id).show();
@@ -57,7 +57,7 @@ $(document).ready(function() {
             var id = $(this).attr("pid");
             $('.menu_'+id).hide();
         });
-        
+
         $('.milestones_box').hide();
         $('.our_team_box').hide();
         $('.text_tab').on("click",function(){
@@ -82,19 +82,19 @@ $(document).ready(function() {
                 $('.our_team_box').show();
             }
         });
-        
+
         scroll_menu();
-        
+
         $(window).scroll(function() {
             scroll_menu();
         });
-    
+
     function scroll_menu(){
         var scroll = $(window).scrollTop();
         if($(document).width() > 991){
             if (scroll >= 10) {
-                $(".header-top").addClass("start_scroll");
-                $("#main-menu").addClass("start_scroll");
+                // $(".header-top").addClass("start_scroll");
+                // $("#main-menu").addClass("start_scroll");
                 $(".fixed-header").addClass("whiteBackground");
                 //$(".header-top").hide();
                 $(".header-logo").hide();
@@ -119,7 +119,7 @@ $(document).ready(function() {
             }
         }
     }
-    
+
 	$('.dropdown-submenu a[href=\'#\']').on('click', function(e){
 		e.preventDefault();
 	});
@@ -217,7 +217,7 @@ var cart = {
 					}, 1000);
 				}
 
-				if (json['success']) {					
+				if (json['success']) {
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
 						$('#cart-quantity-total').text(json['total_quantity']);

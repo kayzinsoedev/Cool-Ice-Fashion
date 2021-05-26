@@ -87,7 +87,7 @@ class ControllerExtensionModuleFeaturedByTab extends Controller {
 		if (isset($this->request->get['module_id']) && ($this->request->server['REQUEST_METHOD'] != 'POST')) {
 			$module_info = $this->model_extension_module->getModule($this->request->get['module_id']);
 		}
-
+		// debug($module_info['description'][1]['description']);
 		$data['token'] = $this->session->data['token'];
 
 		if (isset($this->request->post['name'])) {
@@ -106,6 +106,24 @@ class ControllerExtensionModuleFeaturedByTab extends Controller {
 			$data['title'] = array();
 		}
 
+		if (isset($this->request->post['descripton'])) {
+			$data['descripton'] = $this->request->post['descripton'];
+		} elseif (!empty($module_info)) {
+			$data['descripton'] = $module_info['description'][1]['description'];
+		} else {
+			$data['descripton'] = array();
+		}
+
+		// debug($module_info);
+		if (isset($this->request->post['link'])) {
+			$data['link'] = $this->request->post['link'];
+		} elseif (!empty($module_info)) {
+			$data['link'] = $module_info['link'][1]['link'];
+		} else {
+			$data['link'] = array();
+		}
+
+		// debug($data['descripton']);
 		$this->load->model('localisation/language');
 
 		$data['languages'] = $this->model_localisation_language->getLanguages();
@@ -116,7 +134,7 @@ class ControllerExtensionModuleFeaturedByTab extends Controller {
 			$tabs = $module_info['tabs'];
 		} else {
 			$tabs = array();
-		}		
+		}
 
 		$data['tabs'] = array();
 

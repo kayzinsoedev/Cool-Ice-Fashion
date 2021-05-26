@@ -1,5 +1,5 @@
-<?php   
-        $module_id = rand(); 
+<?php
+        $module_id = rand();
         $entry_email = "Enter email address here";
 ?>
 
@@ -44,12 +44,12 @@
 	.newsletter-grid > div{
 		grid-column: 1/3;
 	}
-	
+
 	.newsletter-grid > div:nth-last-child(2){
 		grid-column-start: 1;
 		grid-column-end: 2;
 	}
-	
+
 	.newsletter-grid > div:last-child{
 		grid-column-start: 2;
 		grid-column-end: 3;
@@ -68,12 +68,12 @@
 		-ms-grid-row-span: 1;
 	}
 
-	<?php 
+	<?php
 	$i = $i_printable = 0;
 	foreach ($default_fields as $field){
 		$i++;
 		if (empty($settings['modules_' . $field]) || $settings['modules_' . $field] == 'hide') continue;
-		
+
 		$i_printable++;
 		echo '.newsletter-grid > div:nth-child('.$i.'){
 			-ms-grid-row: '.$i_printable.';
@@ -82,20 +82,20 @@
 	} ?>
 
 	<?php $second_last = $i_printable+1; ?>
-	
+
 	.newsletter-grid > div:last-child,
 	.newsletter-grid > div:nth-child(<?= $second_last; ?>){
 		-ms-grid-row: <?= $second_last; ?>;
 		-ms-grid-column-span: 1;
 	}
-	
+
 	.newsletter-grid > div:last-child{
 		-ms-grid-column: 2;
 	}
 	/*END IE*/
 
 	.mi-block {
-		margin: 5px 0px;		
+		margin: 5px 0px;
 		vertical-align: top;
 	}
 
@@ -175,7 +175,7 @@
 			$('#mi<?php echo $module_id; ?>').find('.box-heading').removeClass('box-heading').wrap('<h3>');
 			$('#mi<?php echo $module_id; ?>').find('.box-content').removeClass('box-content');
 		}
-		
+
 		<?php if (!empty($trigger_popup)) { ?>
 			$(document).ready(function(){
 				showMailchimpPopup();
@@ -200,20 +200,20 @@
 				<?php echo html(str_replace('[email]', $email, $settings['moduletext_subscribed_'.$language]), ENT_QUOTES, 'UTF-8'); ?>
 			</div>
 			<input type="hidden" name="email" value="<?php echo $email; ?>" />
-			
+
 			<div class="mi-block <?= $subscribed?'subscribed':''; ?>">
 				<!-- <h4><span class="mi-required">*</span> <?php echo $entry_email . (strpos($entry_email, ':') ? '' : ':'); ?></h4> -->
-				<input 
+				<input
 				placeholder="<?php echo $entry_email . (strpos($entry_email, ':') ? '' : ''); ?>"
 				type="text" class="form-control subscribed" name="email" onkeydown="if (event.keyCode == 13) miSubscribe<?php echo $module_id; ?>($(this))" <?php if ($email) echo 'value="' . $email . '" disabled="disabled"'; ?> />
 			</div>
-			
+
 		<?php } else { ?>
-			
+
 			<?php if (!empty($settings['moduletext_top_'.$language])) { ?>
 				<div class="mi-toptext"><?php echo html_entity_decode($settings['moduletext_top_'.$language], ENT_QUOTES, 'UTF-8'); ?></div>
 			<?php } ?>
-			
+
 			<div class="newsletter-grid">
 				<?php if (!$email) { ?>
 					<?php foreach ($default_fields as $field) { ?>
@@ -237,34 +237,38 @@
 							<?php } elseif ($field == 'zone') { ?>
 								<select class="form-control" name="zone"></select>
 							<?php } else { ?>
-								<input 
+								<input
 								placeholder="<?= $placeholder; ?>"
 								type="text" class="form-control" name="<?php echo $field; ?>" onkeydown="if (event.keyCode == 13) miSubscribe<?php echo $module_id; ?>($(this))" />
 							<?php } ?>
 						</div>
 					<?php } ?>
 				<?php } ?>
-			
+
+        <div class="mi-block <?= $subscribed?'subscribed':''; ?>">
+					<h5 class='newsletter-title'>Newsletter</h5>
+          <p>Join our mailing list for latest news and promotions.</p>
+				</div>
 
 				<div class="mi-block <?= $subscribed?'subscribed':''; ?>">
 					<!-- <h4><span class="mi-required">*</span> <?php echo $entry_email . (strpos($entry_email, ':') ? '' : ':'); ?></h4> -->
-					<input 
+					<input
 					placeholder="<?php echo $entry_email . (strpos($entry_email, ':') ? '' : ''); ?>"
 					type="text" class="form-control" name="email" onkeydown="if (event.keyCode == 13) miSubscribe<?php echo $module_id; ?>($(this))" <?php if ($email) echo 'value="' . $email . '" disabled="disabled"'; ?> />
 				</div>
-				
+
 				<?php if (!empty($mailchimp_lists)) { ?>
 					<?php $lists = explode(';', $settings['modules_lists']); ?>
-					
+
 					<div class="mi-block">
 						<h4><span class="mi-required">*</span> <?php echo $settings['moduletext_list_'.$language]; ?></h4>
 						<?php if (!in_array('allow_multiple', $lists)) { ?>
 							<select name="list" class="form-control">
 						<?php } ?>
-						
+
 						<?php foreach ($mailchimp_lists as $list_id => $list_name) { ?>
 							<?php if ($list_id == 'allow_multiple' || !in_array($list_id, $lists)) continue; ?>
-							
+
 							<?php if (in_array('allow_multiple', $lists)) { ?>
 								<?php $checked = (in_array($list_id, $subscribed_lists)) ? 'checked="checked"' : ''; ?>
 								<div><label><input type="checkbox" name="list[]" value="<?php echo $list_id; ?>" <?php echo $checked; ?> /> <?php echo $list_name; ?></label></div>
@@ -273,24 +277,24 @@
 								<option value="<?php echo $list_id; ?>" <?php echo $selected; ?>><?php echo $list_name; ?></option>
 							<?php } ?>
 						<?php } ?>
-						
+
 						<?php if (!in_array('allow_multiple', $lists)) { ?>
 							</select>
 						<?php } ?>
 					</div>
 				<?php } ?>
-				
+
 				<?php if ($interest_groups && !empty($settings['moduletext_interestgroups_'.$language])) { ?>
 					<div class="mi-toptext"><?php echo html_entity_decode($settings['moduletext_interestgroups_'.$language], ENT_QUOTES, 'UTF-8'); ?></div>
 				<?php } ?>
-				
+
 				<?php foreach ($interest_groups as $interest_group) { ?>
 					<?php if (empty($settings[$settings['listid'] . '_' . $interest_group['id'] . '_' . $language])) continue; ?>
-					
+
 					<div class="mi-block">
 						<h4><?php echo html_entity_decode($settings[$settings['listid'] . '_' . $interest_group['id'] . '_' . $language], ENT_QUOTES, 'UTF-8'); ?>:</h4>
 						<?php if ($interest_group['type'] == 'dropdown') { ?>
-							
+
 							<select class="mi-padleft form-control" name="interests[]">
 								<?php foreach ($interest_group['interests'] as $interest) { ?>
 									<?php if (empty($settings[$settings['listid'] . '_' . $interest_group['id'] . '_' . $interest['id'] . '_' . $language])) continue; ?>
@@ -298,9 +302,9 @@
 									<option value="<?php echo $interest['id']; ?>" <?php echo $selected; ?>><?php echo $settings[$settings['listid'] . '_' . $interest_group['id'] . '_' . $interest['id'] . '_' . $language]; ?></option>
 								<?php } ?>
 							</select>
-							
+
 						<?php } else { ?>
-							
+
 							<?php foreach ($interest_group['interests'] as $interest) { ?>
 								<?php if (empty($settings[$settings['listid'] . '_' . $interest_group['id'] . '_' . $interest['id'] . '_' . $language])) continue; ?>
 								<?php $checked = (isset($interests[$interest_group['id']]) && in_array($interest['name'], $interests[$interest_group['id']])) ? 'checked="checked"' : ''; ?>
@@ -308,32 +312,36 @@
 									<label><input type="<?php echo str_replace('es', '', $interest_group['type']); ?>" value="<?php echo $interest['id']; ?>" <?php echo $checked; ?> name="interests[]" /> &nbsp;<?php echo html_entity_decode($settings[$settings['listid'] . '_' . $interest_group['id'] . '_' . $interest['id'] . '_' . $language], ENT_QUOTES, 'UTF-8'); ?></label>
 								</div>
 							<?php } ?>
-							
+
 						<?php } ?>
 					</div>
 				<?php } ?>
-				
+
 				<?php if (!$subscribed) { ?>
 					<div class="mi-block mi-button">
-						<a class="button btn btn-primary btn-mi" onclick="miSubscribe<?php echo $module_id; ?>($(this))"><?php echo html($settings['moduletext_button_'.$language]); ?></a>
+						<a class="button btn btn-primary btn-mi" onclick="miSubscribe<?php echo $module_id; ?>($(this))"><?php echo "Submit"; ?></a>
+
 					</div>
 				<?php } elseif ($interest_groups || !empty($lists)) { ?>
 					<div class="mi-block mi-button">
-						<a class="button btn btn-primary btn-mi" onclick="miSubscribe<?php echo $module_id; ?>($(this))"><?php echo html($settings['moduletext_updatebutton_'.$language]); ?></a>
+						<a class="button btn btn-primary btn-mi" onclick="miSubscribe<?php echo $module_id; ?>($(this))"><?php echo "Submit"; ?></a>
+
 					</div>
 				<?php } ?>
 			</div>
-		
+
 		<?php } ?>
 	</div>
         <?php if($social_icons){ ?>
         <div class="footer-social-icons">
-                <?php foreach($social_icons as $icon){ ?>
-                <a href="<?= $icon['link']; ?>" title="<?= $icon['title']; ?>" alt="
-                        <?= $icon['title']; ?>" target="_blank">
-                        <img src="<?= $icon['icon']; ?>" title="<?= $icon['title']; ?>" class="img-responsive" alt="<?= $icon['title']; ?>" />
-                </a>
-                <?php } ?>
+              <a href="<?= $social_icons[0]['link']; ?>" title="<?= $social_icons[0]['title']; ?>" alt="
+                      <?= $social_icons[0]['title']; ?>" target="_blank">
+                      <img src="image/catalog/footer/footer-fb.png" title="<?= $social_icons[0]['title']; ?>" class="img-responsive" alt="<?= $social_icons[0]['title']; ?>" />
+              </a>
+              <a href="<?= $social_icons[1]['link']; ?>" title="<?= $social_icons[1]['title']; ?>" alt="
+                      <?= $social_icons[1]['title']; ?>" target="_blank">
+                      <img src="image/catalog/footer/footer-ig.png" title="<?= $social_icons[1]['title']; ?>" class="img-responsive" alt="<?= $social_icons[1]['title']; ?>" />
+              </a>
         </div>
         <?php } ?>
 </div>
@@ -354,14 +362,14 @@
 			$(this).change();
 		});
 	<?php } ?>
-	
+
 	function miSubscribe<?php echo $module_id; ?>(element) {
-		// var message = element.parent().parent().find('.mi-message');
+		var message = element.parent().parent().find('.mi-message');
 		element.parent().parent().find('a.button').attr('disabled', 'disabled');
-		
+
 		//message.slideUp(function(){
 			//message.removeClass('attention success warning alert alert-warning alert-danger');
-			
+
 			if (!$.trim(element.parent().parent().find('input[name="email"]').val()).match(/^[^\@]+@.*\.[a-z]{2,6}$/i)) {
 				alert_message = '<?php echo str_replace("'", "\'", $settings['moduletext_invalidemail_'.$language]); ?>';
 				swal({
@@ -384,7 +392,7 @@
 						element.parent().parent().find('a.button').removeAttr('disabled');
 				<?php } ?>
 			<?php } ?>
-				
+
 			} else {
 				$.ajax({
 					type: 'POST',
@@ -430,12 +438,12 @@
 								customClass: 'swal-mailchimp',
 							});
 							<?php } ?>
-						} 
+						}
 						element.parent().parent().find('a.button').removeAttr('disabled');
 					}
 				});
 			}
-			
+
 		// });
 	}
 </script>

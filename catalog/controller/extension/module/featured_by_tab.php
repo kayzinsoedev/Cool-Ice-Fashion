@@ -12,7 +12,7 @@ class ControllerExtensionModuleFeaturedByTab extends Controller {
 		$data['text_tax'] = $this->language->get('text_tax');
 
 		$data['button_view_more'] = $this->language->get('button_view_more');
-		$data['button_cart'] = $this->language->get('button_cart'); 
+		$data['button_cart'] = $this->language->get('button_cart');
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
 
@@ -49,14 +49,17 @@ class ControllerExtensionModuleFeaturedByTab extends Controller {
 			);
 		}
 
+		$data['description'] = $setting['description'][1]['description'];
+		$data['link'] = $setting['link'][1]['link'];
+
 		//debug($data['tabs']);
 
-		if ($data['tabs']) { 
+		if ($data['tabs']) {
 			$this->document->addStyle('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.css');
 			$this->document->addScript('catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js');
 			$data['slider_script'] = $this->load->view('extension/module/featured_by_tab_owl_script', $data);
 			return $this->load->view('extension/module/featured_by_tab', $data);
 		}
-		
+
 	}
 }
