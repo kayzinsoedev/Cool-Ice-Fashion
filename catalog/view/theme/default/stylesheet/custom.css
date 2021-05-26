@@ -465,7 +465,7 @@ body.information-information.iid-4 h2{
     background-color: transparent;
 }
 .common-home .slideshow-text-0, .common-home .slideshow-text-1, .common-home .slideshow-text-2, .common-home .slideshow-text-3{
-  line-height: 15px;
+  /* line-height: 15px; */
 }
 
 .slider-slideshow-description-link a{
@@ -779,6 +779,12 @@ left: 81vw; */
       z-index: 1; */
   }
 }
+@media (max-width: 1536px){
+  .slider-number {
+      bottom: 8%;
+      left: 81vw;
+  }
+}
 @media (max-width: 1500px){
   .header-container .header-logo .header-logo-image img {
       width: 80px;
@@ -862,6 +868,9 @@ left: 81vw; */
 }
 
 @media(max-width : 540px){
+  .common-home .slideshow-text-0, .common-home .slideshow-text-1, .common-home .slideshow-text-2, .common-home .slideshow-text-3{
+      line-height: 15px;
+  }
   .owl-nav,.slider-number {
     display: none;
   }
