@@ -654,7 +654,7 @@ body.common-home .section-space .newsletter_module:after{
 }
 
 .newsletter-module-form{
-    width: 40% !important;
+    width: 30% !important;
     margin: 0 auto;
     padding-top:  calc(30px + (27 - 20) * (100vw - 320px) / (1920 - 320))!important;
 }
@@ -899,6 +899,9 @@ left: 81vw; */
 }
 
 @media(max-width : 768px){
+  .newsletter-module-form{
+    width: 80% !important;
+  }
   .slider-container{
     background: radial-gradient(white, transparent);
   }
