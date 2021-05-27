@@ -320,6 +320,7 @@ body.common-home .featured_by_tab .product-block:hover{
     background: url(../../../../../image/catalog/home/about_decor1.png)no-repeat;
     /* background: url(image/catalog/home/about_decor1.png) no-repeat; */
     top: 20px;
+    background-color: #fff !important;
 }
 
 .section-space.our_categories h2{
