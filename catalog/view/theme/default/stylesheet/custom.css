@@ -665,13 +665,9 @@ body.common-home .section-space .newsletter_module:after{
     min-height: 40px;
 }
 
-.fcategory_tab .nav-pills>li:before {
-    /* content: '';
-    display: block;
+.fcategory_tab .nav-pills>li.active>a {
     border: 4px dotted #fff;
-    margin: -6px 0 0 -11px;
-    padding: 4px;
-    border-radius: 16px; */
+    padding: 10px 30px;
 }
 
 .newsletter-btn{

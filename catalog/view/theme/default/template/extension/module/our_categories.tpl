@@ -7,7 +7,7 @@
             <?php foreach($items as $item) { ?>
             <div class="col-sm-12 col-md-3 col-lg-3 remove_padding home-cat-inner" style="margin-top:20px;padding-left:0px">
                 <div class="image_box relative <?php if($item['link'] != ''){echo 'pointer'; } ?>" style="background:url('image/<?= $item['image']; ?>')no-repeat;min-height: 260px;background-size: contain;background-size: cover;" <?php if($item['link'] != ""){?> onclick="window.location.href='<?= $item['link']; ?>'" <?php } ?> >
-                    <div class="box_overlay absolute">
+                    <div class="box_overlay absolute" style="border: 4px dotted <?=$item['text_color'];?> ;border-radius: 10px ;">
                         <div class="home-cat-box box_bottom absolute">
                         <!-- <div class="box_bottom absolute position-bottom-left"> -->
                             <h3 class="home-cat-title" style="color:<?=$item['text_color'];?>"><?= $item['title']; ?></h3>
