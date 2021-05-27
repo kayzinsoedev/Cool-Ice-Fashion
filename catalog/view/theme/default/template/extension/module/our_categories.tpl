@@ -1,6 +1,8 @@
 <h2><?=$main_title; ?></h2>
 <p><?=$description; ?></p>
 
+
+
 <div class="box_content">
     <div class="rows">
         <div class="col-sm-12 home-cat-box" style="padding:0 0;">

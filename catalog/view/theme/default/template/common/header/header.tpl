@@ -172,3 +172,11 @@
 
 
 	<?= $page_banner; ?>
+
+
+  <script>
+    jQuery(document).ready(function($) {
+      console.log(document.getElementsByName('search'));
+        document.getElementsByName('search')[1].placeholder="I'm looking for..";
+    });
+  </script>
