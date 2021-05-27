@@ -143,6 +143,25 @@
     padding-top: 30px;
 }
 
+/* .outline{
+  border: 4px solid #000;
+    border-radius: 12px;
+    width: 100px; height: 100px;
+    margin: 10px;
+
+} */
+
+/* .outline:before{
+    width:100px;
+    height:100px;
+    content:'';
+    display:block;
+    border: 4px solid #aaa;
+    margin: -8px 0 0 -8px;
+    padding: 4px;
+    border-radius: 16px;
+} */
+
 .fcategory_tab .nav-pills>li.active>a,
 .fcategory_tab .nav-pills>li.active>a:focus,
 .fcategory_tab .nav-pills>li.active>a:hover{
@@ -150,8 +169,8 @@
     background-color: #57cbf5;
     border-radius: 20px;
     padding: 10px 30px;
-    outline: 3px dotted #fff;
-    outline-offset: -11px;
+    /* outline: 3px dotted #fff; */
+    /* outline-offset: -11px; */
     font-family: "FredokaOne-Regular";
     font-size: 14px;
     text-transform: uppercase;
@@ -613,7 +632,7 @@ body.information-information.iid-4 h2{
     text-decoration: underline;
 }
 
-body.common-home .section-space .newsletter_module{
+body.common-home .section-space.newsletter_module{
   background-attachment: fixed;
 }
 
@@ -634,7 +653,7 @@ body.common-home .section-space .newsletter_module:after{
 }
 
 .newsletter-module-form{
-    width: 50% !important;
+    width: 40% !important;
     margin: 0 auto;
     padding-top:  calc(30px + (27 - 20) * (100vw - 320px) / (1920 - 320))!important;
 }
@@ -644,6 +663,15 @@ body.common-home .section-space .newsletter_module:after{
     border: none;
     border-radius: 5px;
     min-height: 40px;
+}
+
+.fcategory_tab .nav-pills>li:before {
+    /* content: '';
+    display: block;
+    border: 4px dotted #fff;
+    margin: -6px 0 0 -11px;
+    padding: 4px;
+    border-radius: 16px; */
 }
 
 .newsletter-btn{
