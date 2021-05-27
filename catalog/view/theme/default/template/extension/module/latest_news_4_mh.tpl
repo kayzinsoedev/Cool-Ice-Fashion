@@ -145,7 +145,7 @@
 <?php } ?>
 
 </div>
-<div class="pd-t30 pd-b30 text-center"><a href="<?= $view_more_link ?>" class="btn btn-img home-fblog-btn">View All</a></div>
+<!-- <div class="pd-t30 pd-b30 text-center"><a href="<?= $view_more_link ?>" class="btn btn-img home-fblog-btn">View All</a></div> -->
 
 
 
