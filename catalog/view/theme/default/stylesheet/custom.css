@@ -16,11 +16,13 @@
   to {left: 200px;}
 }
 
-body{
+body.common-home{
   background-image: none;
   background-color: #b8ecff;
 }
-
+body{
+    background-image: none;
+}
 /* footer.container:before{
     background-image: url(image/catalog/home/home_bg4.png) !important;
     display: block!important;
@@ -245,15 +247,18 @@ body.common-home .featured_by_tab .product-block:hover{
 }
 .custom-cart-div:hover,
 .custom-cart-div{
-    background: #685faa;
-    color: #fff;
-    font-family: 'FredokaOne-Regular';
-    font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320));
-    margin: 10px 0px;
-    box-shadow: 0px 1px 0px 3px rgb(104 95 170);
-    -webkit-box-shadow: 0px 1px 0px 3px rgb(104 95 170);
-    -moz-box-shadow: 0px 1px 0px 3px rgb(104 95 170);
+    background: #685faa !important;
+    color: #fff!important;
+    font-family: 'FredokaOne-Regular'!important;
+    font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320))!important;
+    margin: 10px 0px!important;
+    box-shadow: 0px 1px 0px 3px rgb(104 95 170)!important;
+    -webkit-box-shadow: 0px 1px 0px 3px rgb(104 95 170)!important;
+    -moz-box-shadow: 0px 1px 0px 3px rgb(104 95 170)!important;
     border: 2px dotted #fff;
+}
+.product-view button{
+  height: auto!important;
 }
 
 .btn-group.product-button{
@@ -263,14 +268,14 @@ body.common-home .featured_by_tab .product-block:hover{
 
 .wishlist-btn:hover,
 .wishlist-btn{
-  background: #57cbf5;
-  color: #fff;
-  font-family: 'FredokaOne-Regular';
-  font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320));
-  box-shadow: 0px 1px 0px 3px #57cbf5;
-  -webkit-box-shadow: 0px 1px 0px 3px #57cbf5;
-  -moz-box-shadow: 0px 1px 0px 3px #57cbf5;
-  border: 2px dotted #fff;
+  background: #57cbf5 !important;
+  color: #fff!important;
+  font-family: 'FredokaOne-Regular'!important;
+  font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320))!important;
+  box-shadow: 0px 1px 0px 3px #57cbf5!important;
+  -webkit-box-shadow: 0px 1px 0px 3px #57cbf5!important;
+  -moz-box-shadow: 0px 1px 0px 3px #57cbf5!important;
+  border: 2px dotted #fff!important;
 }
 
 .custom-cart-div:hover,
