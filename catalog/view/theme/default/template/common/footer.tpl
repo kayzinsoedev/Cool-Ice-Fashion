@@ -26,6 +26,9 @@
 <?php } ?>
 
 <footer>
+
+  <img src="image/catalog/home/home_bg4.png">
+
 	<div class="container">
             <div class="footer_box">
 		<div class="footer-upper-contet">

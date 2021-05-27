@@ -18,7 +18,13 @@
 
 body{
   background-image: none;
+  background-color: #b8ecff;
 }
+
+/* footer.container:before{
+    background-image: url(image/catalog/home/home_bg4.png) !important;
+    display: block!important;
+} */
 
 .fixed-header{
   background: #fff !important;
@@ -708,7 +714,7 @@ body.common-home .section-space .newsletter_module:after{
 }
 
 .newsletter_module{
-    min-height: 500px !important;
+    min-height: 400px !important;
 }
 .section-space.max-offset.newsletter_module:after{
     content: " " !important;
