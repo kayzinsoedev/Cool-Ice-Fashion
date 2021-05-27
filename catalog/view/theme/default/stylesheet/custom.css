@@ -170,11 +170,13 @@
     background-color: #57cbf5;
     border-radius: 20px;
     padding: 10px 30px;
-    /* outline: 3px dotted #fff; */
-    /* outline-offset: -11px; */
     font-family: "FredokaOne-Regular";
     font-size: 14px;
     text-transform: uppercase;
+    box-shadow: 0px 0px 0px 10px #57cbf5;
+    -webkit-box-shadow: 0px 0px 0px 3px #57cbf5;
+    -moz-box-shadow: 0px 1px 0px 10px rgba(104,95,170,1);
+    border: 2px dotted #fff;
 }
 
 .nav-pills>li>a{
@@ -238,6 +240,10 @@ body.common-home .featured_by_tab .product-block:hover{
     font-family: 'FredokaOne-Regular';
     font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320));
     margin: 10px 0px;
+    box-shadow: 0px 1px 0px 3px rgb(104 95 170);
+    -webkit-box-shadow: 0px 1px 0px 3px rgb(104 95 170);
+    -moz-box-shadow: 0px 1px 0px 3px rgb(104 95 170);
+    border: 2px dotted #fff;
 }
 
 .btn-group.product-button{
@@ -251,6 +257,10 @@ body.common-home .featured_by_tab .product-block:hover{
   color: #fff;
   font-family: 'FredokaOne-Regular';
   font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320));
+  box-shadow: 0px 1px 0px 3px #57cbf5;
+  -webkit-box-shadow: 0px 1px 0px 3px #57cbf5;
+  -moz-box-shadow: 0px 1px 0px 3px #57cbf5;
+  border: 2px dotted #fff;
 }
 
 .custom-cart-div:hover,
@@ -259,7 +269,7 @@ body.common-home .featured_by_tab .product-block:hover{
 .wishlist-btn{
   min-width: auto !important;
   min-height: auto !important;
-  padding: 8px 15px !important;
+  padding: 6px 13px !important;
   height: auto !important;
 }
 
@@ -420,7 +430,11 @@ footer .mi-block .btn-mi:hover{
     border-radius: 10px !important;
     position: absolute;
     transform: translateX(-130px);
-    padding: 10px 30px;
+    padding: 7px 30px;
+    box-shadow: 0px 1px 0px 3px #685faa;
+    -webkit-box-shadow: 0px 0px 0px 1px #685faa;
+    -moz-box-shadow: 0px 1px 0px 3px #57cbf5;
+    border: 2px dotted #fff !important;
 }
 
 footer .mi-block input{
@@ -491,14 +505,17 @@ body.information-information.iid-4 h2{
 .slider-slideshow-description-link a{
     background: #685faa !important;
     border-radius: 10px!important;
-    border: none!important;
+    /* border: none!important; */
     font-family: "FredokaOne-Regular"!important;
     font-size: calc(10px + (27 - 20) * (100vw - 320px) / (1920 - 320))!important;
     /* padding: 0; */
-    padding: 10px 25px !important;
+    padding: 5px 20px !important;
     min-width: auto !important;
     min-height: auto!important;
     height: auto!important;
+    border: 2px dotted #fff !important;
+    box-shadow: 0px 0px 0px 1px rgb(104 95 170);
+    -webkit-box-shadow: 1px 0px 0px 4px rgb(104 95 170);
 }
 
 .banner-title{
@@ -555,11 +572,14 @@ body.information-information.iid-4 h2{
 .view-all-btn-link{
     background: #685faa;
     color: #fff;
-    padding: 10px 25px;
+    padding: 7px 21px;
     border-radius: 10px;
     font-family: "FredokaOne-Regular";
     font-size: 15px;
     text-transform: uppercase;
+    border: 2px dotted;
+    box-shadow: 0px 0px 0px 4px rgb(104 95 170);
+    -webkit-box-shadow: 0px 0px 0px 4px rgb(104 95 170);
 }
 .view-all-btn-link:hover{
   cursor: pointer;
@@ -669,11 +689,23 @@ body.common-home .section-space .newsletter_module:after{
 }
 
 .fcategory_tab .nav-pills>li.active>a {
-    border: 4px dotted #fff;
+    /* border: 4px dotted #fff; */
     /* padding: 10px 30px; */
-    padding: 6px 25px;
+    /* padding: 6px 25px; */
 }
 
+.section-space.max-offset.newsletter_module:before{
+  content: " " !important;
+  display: block!important;
+  height: 100%!important;
+  width: 100%!important;
+  position: absolute!important;
+    /* background: url(../../../../../image/catalog/home/home_bg3.png)no-repeat!important; */
+}
+
+.newsletter_module{
+    min-height: 900px !important;
+}
 .section-space.max-offset.newsletter_module:after{
     content: " " !important;
     display: block!important;
@@ -706,16 +738,18 @@ body.common-home .section-space .newsletter_module:after{
 }
 
 .newsletter-btn{
-    background-color: #685faa !important;
-    border: none!important;
-    border-radius: 5px!important;
-    /* min-width: 130px!important;
-    min-height: 40px!important; */
-    /* transform: translateX(-100px); */
-    min-width: auto!important;
-    min-height: auto!important;
-    padding: 10px 25px !important;
-    height: auto !important;
+  background-color: #685faa !important;
+  border: none!important;
+  border-radius: 5px!important;
+  /* transform: translateX(-100px); */
+  min-width: auto!important;
+  min-height: auto!important;
+  padding: 7px 30px !important;
+  height: auto !important;
+  box-shadow: 0px 1px 0px 3px #685faa;
+  -webkit-box-shadow: 0px 0px 0px 1px #685faa;
+  -moz-box-shadow: 0px 1px 0px 3px #57cbf5;
+  border: 2px dotted #fff !important;
 }
 footer .list-unstyled li {
     margin-bottom: 6px !important;
