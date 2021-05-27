@@ -16,6 +16,10 @@
   to {left: 200px;}
 }
 
+body{
+  background-image: none;
+}
+
 .fixed-header{
   background: #fff !important;
 }
@@ -714,7 +718,7 @@ body.common-home .section-space .newsletter_module:after{
     position: absolute!important;
     bottom: -260px!important;
     bottom: 0px!important;
-    background: url(../../../../../image/catalog/home/home_bg4.png)no-repeat!important;
+    /* background: url(../../../../../image/catalog/home/home_bg4.png)no-repeat!important; */
 }
 #main-menu .menu_tab ul{
   border: 1px solid #685faa;

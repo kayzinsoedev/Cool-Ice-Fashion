@@ -10,8 +10,8 @@
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>">
         <?php echo $content_top; ?>
-    
-            <div class="panel panel-default home-contact-us">
+
+            <!-- <div class="panel panel-default home-contact-us">
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
@@ -19,10 +19,10 @@
                         <?php /*if ($geocode || $google_map) { ?>
                                 <div data-id="gmap_contact" data-toggle="gmap" class="gmap"
                                         <?php if($google_map){ ?>
-                                                data-lat="<?= $google_map['lat']; ?>" 
-                                                data-lng="<?= $google_map['lng']; ?>" 
-                                                data-store="<?= $google_map['store']; ?>" 
-                                                data-address="<?= $google_map['address']; ?>" 
+                                                data-lat="<?= $google_map['lat']; ?>"
+                                                data-lng="<?= $google_map['lng']; ?>"
+                                                data-store="<?= $google_map['store']; ?>"
+                                                data-address="<?= $google_map['address']; ?>"
                                         <?php } ?>
                                         data-geo="<?= $geocode; ?>"
                                 >
@@ -52,7 +52,11 @@
                         </div>
                     </div>
                 </div>
-            </div>        
+            </div> -->
+            <div style="background-image: url('image/catalog/home/home_bg4.png')";></div>
+            <div>
+                  <!-- <img src="image/catalog/home/home_bg4.png"> -->
+            </div>
         <?php echo $content_bottom; ?>
     </div>
     <?php echo $column_right; ?></div>
