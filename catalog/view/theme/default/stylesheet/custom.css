@@ -987,6 +987,9 @@ left: 81vw; */
 }
 
 @media(max-width : 540px){
+  .newsletter_module{
+    background-position: unset !important;
+  }
   .common-home .box_content .image_box h3{
     font-size: 24px !important;
     padding: 0 !important;
@@ -1061,9 +1064,7 @@ left: 81vw; */
 }
 
 @media(max-width : 415px){
-  .newsletter_module{
-    background-position: unset !important;
-  }
+
   .common-home .box_content .image_box h3,
   .home-cat-txt{
       padding: 0 !important;
