@@ -716,6 +716,9 @@ body.common-home .section-space .newsletter_module:after{
     /* padding: 6px 25px; */
 }
 
+.newsletter_module{
+  background-position: unset !important;
+}
 .section-space.max-offset.newsletter_module:before{
   content: " " !important;
   display: block!important;
