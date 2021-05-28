@@ -94,7 +94,6 @@
     <p class="fblog-desc"><?=$heading_descripton;?></p>
 </div>
 <?php } ?>
-
 <div id="home-featured-blog">
   <!-- <?php debug($article); ?> -->
 <?php foreach($article as $arti){ ?>

@@ -52,13 +52,14 @@ class ControllerExtensionModuleNewsletterModule extends Controller {
         }
 
         return $this->load->view('extension/module/newsletter_module', $data);
+        // return $this->load->view('extension/module/test', $data);
     }
 
     public function validate() {
 		$json = array();
-		
+
 		$this->load->language('extension/module/newsletter_module');
-		
+
 		if ($this->request->server['REQUEST_METHOD'] == 'POST') {
 
 			if ((utf8_strlen($this->request->post['email']) > 96) || !filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {
@@ -71,7 +72,7 @@ class ControllerExtensionModuleNewsletterModule extends Controller {
                     $json['error']['email'] = $this->language->get('error_email_exists');
                 }
             }
-			
+
 			if (!isset($json['error'])) {
                 $query = $this->db->query("SELECT email FROM " . DB_PREFIX . "customer_newsletter_list WHERE email = '" . $this->db->escape($this->request->post['email']) . "'");
 
@@ -88,7 +89,7 @@ class ControllerExtensionModuleNewsletterModule extends Controller {
                 $the_mailchimp = new Newsletter_Module($this->config, $this->db, $this->log, $this->session, $this->url, $this->modulehelper);
                 $mailchimp = $the_mailchimp->initMailchimp();
                 $mailchimp_param = array('email_address' => $this->request->post['email'], 'status' => 'subscribed');
-                $chimp = $the_mailchimp->subscribeTheSubscriber($mailchimp, $mailchimp_param); 
+                $chimp = $the_mailchimp->subscribeTheSubscriber($mailchimp, $mailchimp_param);
                  // mailchimp (newlsetter module)
 
                 // update newsletter in customer
@@ -97,7 +98,7 @@ class ControllerExtensionModuleNewsletterModule extends Controller {
 				$json['success'] = $this->language->get('text_success_newsletter');
 			}
 		}
-		
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
     }

@@ -28,6 +28,12 @@ body{
     display: block!important;
 } */
 
+
+
+#waiting_list_submit{
+  transform: translateX(-50px);
+}
+
 .fixed-header{
   background: #fff !important;
 }
@@ -713,8 +719,8 @@ body.common-home .section-space .newsletter_module:after{
 .section-space.max-offset.newsletter_module:before{
   content: " " !important;
   display: block!important;
-  height: 100%!important;
-  width: 100%!important;
+  /* height: 100%!important; */
+  /* width: 100%!important; */
   position: absolute!important;
     /* background: url(../../../../../image/catalog/home/home_bg3.png)no-repeat!important; */
 }
