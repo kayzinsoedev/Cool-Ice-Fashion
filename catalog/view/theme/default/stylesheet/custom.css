@@ -716,9 +716,7 @@ body.common-home .section-space .newsletter_module:after{
     /* padding: 6px 25px; */
 }
 
-.newsletter_module{
-  background-position: unset !important;
-}
+
 .section-space.max-offset.newsletter_module:before{
   content: " " !important;
   display: block!important;
@@ -1063,6 +1061,9 @@ left: 81vw; */
 }
 
 @media(max-width : 415px){
+  .newsletter_module{
+    background-position: unset !important;
+  }
   .common-home .box_content .image_box h3,
   .home-cat-txt{
       padding: 0 !important;
