@@ -675,7 +675,9 @@ body.information-information.iid-4 h2{
     text-decoration: underline;
 }
 
-body.common-home .section-space.newsletter_module{
+body.common-home .section-space.newsletter_module,
+body.common-home .section-space.mailchimp
+{
   background-attachment: fixed;
 }
 

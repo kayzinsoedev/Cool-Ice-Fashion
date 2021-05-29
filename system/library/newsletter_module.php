@@ -1,6 +1,7 @@
 <?php
 class Newsletter_Module {
-    private $modulename = 'newsletter_module';
+    // private $modulename = 'newsletter_module';
+    private $modulename = 'mailchimp';
 
     public function __construct($config, $db, $log, $session, $url, $modulehelper) {
 		$this->config = $config;
@@ -32,7 +33,7 @@ class Newsletter_Module {
 
         return $mailchimp;
     }
-	
+
 	public function getMailchimpKey() {
 		$language_id = $this->config->get('config_language_id');
         $mode = $this->modulehelper->get_field ( $this, $this->modulename, $language_id, 'mode' );
@@ -47,7 +48,7 @@ class Newsletter_Module {
         else {
             $mailchimp_api_key = $mailchimp_api_key_test;
         }
-		
+
 		return $mailchimp_api_key;
 	}
 
@@ -55,10 +56,10 @@ class Newsletter_Module {
         // pull Mailchimp list
         $language_id = $this->config->get('config_language_id');
         $mailchimp_list_list_id = $this->modulehelper->get_field ( $this, $this->modulename, $language_id, 'mailchimp_list' );
-       
+
         return $mailchimp_list_list_id;
     }
-    
+
     public function getMailchimpArr($mca_api_key) {
 		//echo DIR_SYSTEM . 'library/mailchimp-api/index.php'; die;
         include(DIR_SYSTEM . 'library/mailchimp-api/index.php');
@@ -71,7 +72,7 @@ class Newsletter_Module {
         $result = $MailChimp->post('lists/'.$list_id.'/members', $data);
         return($result);
     }
-    
+
     public function unsubcribeTheSubscriber($MailChimp, $data) {
         $list_id = $this->getMailchimpListId();
         $result = $MailChimp->patch('lists/'.$list_id.'/members/'. md5(strtolower($data['email_address'])), array('status' => 'unsubscribed') );

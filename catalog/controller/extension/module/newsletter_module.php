@@ -51,6 +51,8 @@ class ControllerExtensionModuleNewsletterModule extends Controller {
             $data['has_subscribed'] = 0;
         }
 
+
+
         return $this->load->view('extension/module/newsletter_module', $data);
         // return $this->load->view('extension/module/test', $data);
     }
