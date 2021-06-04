@@ -14,7 +14,7 @@
         <button type="button" class="btn btn-default" data-size="768px"><i class="fa fa-tablet"></i></button>
         <button type="button" class="btn btn-default" data-size="320px"><i class="fa fa-mobile"></i></button>
       </div>
-     
+
     </div>
     <div class="pull-right">
       <select class="preview-lang form-control" style="width:50px;padding-left:3px;padding-right:0">
@@ -296,7 +296,7 @@
               <tr>
                 <td class="form-horizontal">
                   <h3><img style="padding-right:15px" src="view/pro_email/img/layout_global.png" alt=""/><?php echo $_language->get('text_global'); ?></h3>
-                  
+
                   <div class="form-group form-inline">
                     <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $_language->get('entry_layout_width_i'); ?>"><?php echo $_language->get('entry_layout_width'); ?></span></label>
                     <div class="col-sm-4">
@@ -307,13 +307,13 @@
                       </select>
                     </div>
                   </div>
-                  
+
                   <div class="form-group  form-inline">
                     <label class="col-sm-2 control-label"><?php echo $_language->get('entry_logo'); ?></label>
                     <div class="col-sm-4">
                       <?php imageField('logo', $OC_V2, $_language, $thumb, $proemail_theme, $no_image); ?>
                     </div>
-                    
+
                     <label class="col-sm-2 control-label"><span data-toggle="tooltip" title="<?php echo $_language->get('entry_logo_width_i'); ?>"><?php echo $_language->get('entry_logo_width'); ?></span></label>
                     <div class="col-sm-4">
                       <input name="proemail_theme[logo_width]" type="text" class="form-control delayChangeReload" value="<?php echo isset($proemail_theme['logo_width']) ? $proemail_theme['logo_width'] : ''; ?>" />
@@ -331,7 +331,7 @@
                       <input name="proemail_color[btn_text]" data-target=".btn_txt" data-property="color" type="text" id="color_btn_text" class="form-control minicolors" value="<?php echo isset($proemail_color['btn_text']) ? $proemail_color['btn_text'] : ''; ?>" />
                     </div>
                   </div>
-     
+
                   <div class="form-group">
                     <label for="color_bg_page" class="col-sm-2 control-label"><?php echo $_language->get('entry_color'); ?></label>
                     <div class="col-sm-10">
@@ -357,7 +357,7 @@
               <tr>
                 <td class="form-horizontal">
                   <h3><img style="padding-right:15px" src="view/pro_email/img/layout_top.png" alt=""/><?php echo $_language->get('text_top'); ?></h3>
-                  
+
                   <div class="form-group">
                     <label for="color_text_top" class="col-sm-2 control-label"><?php echo $_language->get('entry_color_text'); ?></label>
                     <div class="col-sm-4">
@@ -393,7 +393,7 @@
               <tr>
                 <td class="form-horizontal">
                   <h3><img style="padding-right:15px" src="view/pro_email/img/layout_header.png" alt=""/><?php echo $_language->get('text_header'); ?></h3>
-                  
+
                   <div class="form-group">
                     <label for="color_text_head" class="col-sm-2 control-label"><?php echo $_language->get('entry_color_text'); ?></label>
                     <div class="col-sm-4">
@@ -429,7 +429,7 @@
               <tr>
                 <td class="form-horizontal">
                   <h3><img style="padding-right:15px" src="view/pro_email/img/layout_body.png" alt=""/><?php echo $_language->get('text_body'); ?></h3>
-                  
+
                   <div class="form-group">
                     <label for="color_text" class="col-sm-2 control-label"><?php echo $_language->get('entry_color_text'); ?></label>
                     <div class="col-sm-4">
@@ -465,7 +465,7 @@
               <tr>
                 <td class="form-horizontal">
                   <h3><img style="padding-right:15px" src="view/pro_email/img/layout_footer.png" alt=""/><?php echo $_language->get('text_foot'); ?></h3>
-                  
+
                   <div class="form-group">
                     <label for="color_text_foot" class="col-sm-2 control-label"><?php echo $_language->get('entry_color_text'); ?></label>
                     <div class="col-sm-4">
@@ -546,7 +546,7 @@
         <div class="tab-content clearfix">
           <?php include_once('pro_email_enquiry_update.tpl'); ?>
           <div class="tab-pane active" id="tab-content-0">
-              
+
             <ul class="nav nav-pills nav-stacked col-md-2 menu-types">
               <?php $f=1; $row=0; foreach ($mail_types as $key => $item) { ?>
               <li <?php if($f) echo 'class="active"'; $f=0; ?>><a href="#tab-type-<?php echo $row; ?>" data-type="<?php echo $key; ?>" data-toggle="pill"><?php echo $_language->get('text_type_' . $key); ?></a></li>
@@ -608,7 +608,7 @@
               <div class="col-sm-10 alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $_language->get('text_warning_layout_zones'); ?></div>
             </div>
           </div>
-          
+
           <div class="tab-pane" id="tab-content-4">
             <?php if (empty($mail_custom)) { ?>
               <div style="padding: 30px; margin-bottom: 30px; background-color: #F3F3F3; border-radius:5px;">
@@ -627,9 +627,9 @@
             </div>
             <?php } ?>
           </div>
-         
+
         </div>
-        
+
         <div class="contentPreviewDisplay">
         <?php echo mailPreviewPanel($_language, $order_statuses, $mail_custom, $store_id, $token, $mijourl, $languages); ?>
         </div>
@@ -835,7 +835,7 @@
         </div>
       </div>
 		</div>
-    
+
 		<div class="tab-pane" id="tab-about">
 			<table class="form about">
 				<tr>
@@ -872,7 +872,7 @@
 <?php if (version_compare(VERSION, '2.3', '>=')) { ?>
 <script type="text/javascript" src="view/javascript/summernote/summernote.js"></script>
 <link href="view/javascript/summernote/summernote.css" rel="stylesheet" />
-<script type="text/javascript" src="view/javascript/summernote/opencart.js"></script> 
+<script type="text/javascript" src="view/javascript/summernote/opencart.js"></script>
 <?php } ?>
 <script type="text/javascript"><!--
 jQuery('input.switch').iToggle({easing:'swing', speed:200});
@@ -926,7 +926,7 @@ render: {
     return '<div class="scheme_option">' +
       '<div class="bg" style="background:' + item.scheme.bg_page + '">' +
         '<div class="head" style="background:' + item.scheme.bg_header + ';color:' + item.scheme.text_head + ';"><?php echo $_language->get('text_header'); ?></div>' +
-        '<div class="body" style="background:' + item.scheme.bg_body + ';color:' + item.scheme.text + ';">' + 
+        '<div class="body" style="background:' + item.scheme.bg_body + ';color:' + item.scheme.text + ';">' +
           '<?php echo $_language->get('text_body'); ?> - <span style="color:' + item.scheme.link + '"><?php echo $_language->get('text_link'); ?></span>' +
           '<br/><div class="button" style="background:' + item.scheme.btn + ';color:' + item.scheme.btn_text + ';"><?php echo $_language->get('text_button'); ?></div>' +
         '</div>' +
@@ -949,7 +949,7 @@ onChange: function(value) {
     jQuery('input[name="proemail_color['+field+']"]').val(value);
     jQuery('input[name="proemail_color['+field+']"]').trigger('keyup');
   });
-  
+
   //reloadPreview();
 }
 });
@@ -973,7 +973,7 @@ var delay = (function(){
   timer = setTimeout(callback, ms);
  };
 })();
- 
+
 jQuery(window).load(function() {
   jQuery('.imgChangeReload').on('load', function () {
     reloadPreview();
@@ -982,7 +982,7 @@ jQuery(window).load(function() {
 
 function reloadPreview() {
   jQuery('.preview-content iframe').fadeOut();
-  
+
   <?php if (!$OC_V2 && !defined('JPATH_MIJOSHOP_OC')) { ?>
   for(var instanceName in CKEDITOR.instances){ CKEDITOR.instances[instanceName].updateElement(); }
   <?php } else { ?>
@@ -1077,7 +1077,7 @@ jQuery('body').on('click', '.preview-image', function() {
     val = '0';
     jQuery(this).css('color', '#555');
   }
-  
+
   jQuery('input[name="no-image"]').val(val);
   reloadPreview();
 });
@@ -1089,7 +1089,7 @@ jQuery('body').on('click', '.preview-size .btn', function() {
 });
 --></script>
 <?php if (!$OC_V2 && !defined('JPATH_MIJOSHOP_OC')) { ?>
-<script type="text/javascript" src="view/javascript/ckeditor/ckeditor.js"></script> 
+<script type="text/javascript" src="view/javascript/ckeditor/ckeditor.js"></script>
 <?php } ?>
 <!-- order status -->
 <?php if (!defined('JPATH_MIJOSHOP_OC')) { ?>
@@ -1111,13 +1111,13 @@ var editor = jQuery(this).attr('id');
       });
     <?php } else { ?>
       jQuery('#'+editor).addClass('summernote');
-      
+
       if (editor.search('proemail_type-common') === 0) {
         var summerHeight = 150;
       } else {
         var summerHeight = 300;
       }
-      
+
       <?php if (version_compare(VERSION, '2.2', '>=')) { ?>
         jQuery('#'+editor).summernote({
           disableDragAndDrop: true,
@@ -1143,7 +1143,7 @@ var editor = jQuery(this).attr('id');
                 tooltip: $.summernote.lang[$.summernote.options.lang].image.image,
                 click: function () {
                   $('#modal-image').remove();
-                
+
                   $.ajax({
                     url: 'index.php?route=common/filemanager&<?php echo $token; ?>',
                     dataType: 'html',
@@ -1157,21 +1157,21 @@ var editor = jQuery(this).attr('id');
                     },
                     success: function(html) {
                       $('body').append('<div id="modal-image" class="modal">' + html + '</div>');
-                      
+
                       $('#modal-image').modal('show');
-                      
+
                       $('#modal-image').delegate('a.thumbnail', 'click', function(e) {
                         e.preventDefault();
-                        
+
                         $('#'+editor).summernote('insertImage', $(this).attr('href'));
-                        
+
                         $('#modal-image').modal('hide');
                       });
                     }
-                  });						
+                  });
                 }
               });
-            
+
               return button.render();
             }
           }
@@ -1180,13 +1180,13 @@ var editor = jQuery(this).attr('id');
         jQuery('#'+editor).summernote({
           height: summerHeight
         });
-        
+
         // Override summernotes image manager
         $('button[data-event=\'showImageDialog\']').attr('data-toggle', 'image').removeAttr('data-event');
       <?php } ?>
-        
+
     <?php } ?>
-  
+
   <?php } else { ?>
     CKEDITOR.replace(editor, {
       height:'300px',
@@ -1199,32 +1199,32 @@ var editor = jQuery(this).attr('id');
     });
   <?php } ?>
 });
-//--></script> 
+//--></script>
 <?php } ?>
 
 <script type="text/javascript"><!--
 <?php /*
 var feed_row = <?php echo count($proemail_feeds)+1; ?>;
-function addShipping() {	
+function addShipping() {
 	html  = '<div id="tab-feed-' + feed_row + '" class="tab-pane">';
 	html += '  <table class="form">';
 	html += '    <tr>';
 	html += '      <td><?php echo $_language->get('entry_feed_title'); ?></td>';
 	html += '      <td><input type="text" name="proemail_feeds[' + feed_row + '][title]" value="" class="form-control"/></td>';
 	html += '    </tr>';
-	html += '  </table>'; 
+	html += '  </table>';
 	html += '</div>';
-	
+
 	jQuery('#tab-0 > .tab-content').append(html);
-	
+
 	jQuery('#feed-add').before('<li><a href="#tab-feed-' + feed_row + '" id="shipping-' + feed_row + '" data-toggle="pill"><?php echo $_language->get('text_add_feed'); ?> ' + feed_row + '&nbsp;<i class="fa fa-minus-circle" onclick="jQuery(\'#proemail_feeds a:first\').trigger(\'click\'); jQuery(\'#shipping-' + feed_row + '\').remove(); jQuery(\'#tab-feed-' + feed_row + '\').remove(); return false;"></i></a></li>');
-	
+
 	jQuery('#shipping-' + feed_row).trigger('click');
-	
+
 	feed_row++;
 }
 */ ?>
-//--></script> 
+//--></script>
 <script type="text/javascript"><!--
 jQuery('body').on('click', '.info-btn', function() {
   jQuery('#modal-info .modalContent').html('<div style="text-align:center"><img src="view/pro_email/img/loader.gif" alt=""/></div>');
@@ -1235,15 +1235,15 @@ jQuery('body').on('click', '.modalContent', function(e) {
     jQuery('#modal-info').modal('hide');
   }
 });
-//--></script> 
+//--></script>
 <!-- /custom blocks -->
 <?php if(!$OC_V2) { ?>
 <script type="text/javascript"><!--
 function image_upload(field, thumb) {
 	jQuery('#dialog').remove();
-	
+
 	jQuery('#content').prepend('<div id="dialog" style="padding: 3px 0px 0px 0px;"><iframe src="index.php?<?php echo $mijourl; ?>route=common/filemanager&<?php echo $token; ?>&field=' + encodeURIComponent(field) + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div>');
-	
+
 	jQuery('#dialog').dialog({
 		title: '<?php echo htmlspecialchars($_language->get('text_image_manager'), ENT_QUOTES, 'UTF-8'); ?>',
 		close: function (event, ui) {
@@ -1257,7 +1257,7 @@ function image_upload(field, thumb) {
 					}
 				});
 			}
-		},	
+		},
 		bgiframe: false,
 		width: 800,
 		height: 400,
@@ -1268,48 +1268,48 @@ function image_upload(field, thumb) {
 <?php if (defined('JPATH_MIJOSHOP_OC') && !$OC_V2) { ?>
 jQuery('select').css("max-height", "");
 <?php } ?>
-//--></script> 
+//--></script>
 <?php } ?>
 <script type="text/javascript"><!--
 $('.button-upload').on('click', function() {
   var file_input = $(this).parent().parent().find('input.fileinput');
-  
+
 	$('#form-upload').remove();
-	
+
 	$('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
-  
+
 	$('#form-upload input[name=\'file\']').trigger('click');
-	
+
 	timer = setInterval(function() {
 		if ($('#form-upload input[name=\'file\']').val() != '') {
-			clearInterval(timer);		
-			
+			clearInterval(timer);
+
 			$.ajax({
 				url: 'index.php?route=module/pro_email/fileupload&<?php echo $token; ?>',
-				type: 'post',		
+				type: 'post',
 				dataType: 'json',
 				data: new FormData($('#form-upload')[0]),
 				cache: false,
 				contentType: false,
-				processData: false,		
+				processData: false,
 				beforeSend: function() {
 					$('#button-upload').button('loading');
 				},
 				complete: function() {
 					$('#button-upload').button('reset');
-				},	
+				},
 				success: function(json) {
 					if (json['error']) {
 						alert(json['error']);
 					}
-								
+
 					if (json['success']) {
 						alert(json['success']);
-						
+
 						//$('input[name=\'filename\']').attr('value', json['filename']);
 						file_input.attr('value', json['filename']);
 					}
-				},			
+				},
 				error: function(xhr, ajaxOptions, thrownError) {
 					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 				}
@@ -1337,9 +1337,9 @@ $('input[name=\'prod_adv_autocomp\']').autocomplete({
 	},
 	select: function(item) {
 		$('input[name=\'prod_adv_autocomp\']').val('');
-		
+
 		$('#featured-product' + item['value']).remove();
-		
+
 		$('#featured-product').append('<div id="featured-product' + item['value'] + '"><i class="fa fa-minus-circle"></i> ' + item['label'] + '<input type="hidden" name="proemail_mod_product[featured][product][]" value="' + item['value'] + '" /></div>');
 	}
 });
@@ -1350,7 +1350,7 @@ $('input[name=\'prod_adv_autocomp\']').autocomplete({
 		$.ajax({
 			url: 'index.php?route=catalog/product/autocomplete&<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
 			dataType: 'json',
-			success: function(json) {		
+			success: function(json) {
 				response($.map(json, function(item) {
 					return {
 						label: item.name,
@@ -1359,14 +1359,14 @@ $('input[name=\'prod_adv_autocomp\']').autocomplete({
 				}));
 			}
 		});
-	}, 
+	},
 	select: function(event, ui) {
     $('input[name=\'prod_adv_autocomp\']').val('');
-		
+
 		$('#featured-product' + ui.item.value).remove();
-		
+
 		$('#featured-product').append('<div id="featured-product' + ui.item.value + '"><i class="fa fa-minus-circle"></i> ' + ui.item.label + '<input type="hidden" name="proemail_mod_product[featured][product][]" value="' + ui.item.value + '" /></div>');
-    
+
 		return false;
 	}
 });
@@ -1374,7 +1374,7 @@ $('input[name=\'prod_adv_autocomp\']').autocomplete({
 $('#featured-product').delegate('.fa-minus-circle', 'click', function() {
 	$(this).parent().remove();
 });
-//--></script></div> 
+//--></script></div>
 <?php if (defined('JPATH_MIJOSHOP_OC') && !$OC_V2) { /*fix for old mijoshop*/ ?>
 <style>
 input.form-control{display: block; width: 100%!important; height: 34px; padding: 6px 12px; font-size: 14px; line-height: 1.42857; color: #555; background-color: #FFF; background-image: none; border: 1px solid #CCC; border-radius: 4px; box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset; transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;}

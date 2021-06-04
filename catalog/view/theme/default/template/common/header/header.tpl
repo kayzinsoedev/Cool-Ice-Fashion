@@ -173,10 +173,26 @@
 
 	<?= $page_banner; ?>
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CWK1EGEBL"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
 
   <script>
     jQuery(document).ready(function($) {
       console.log(document.getElementsByName('search'));
         document.getElementsByName('search')[1].placeholder="I'm looking for..";
     });
+
+      // Global site tag (gtag.js) - Google Analytics
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-0CWK1EGEBL');
+      // Global site tag (gtag.js) - Google Analytics
+
+
+
   </script>

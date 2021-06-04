@@ -37,7 +37,7 @@
 
 # Leverage browser caching
 # Caching image and css file
-# Can turn off in chrome for development, 
+# Can turn off in chrome for development,
 # 1 - inspect element
 # 2 - click to network tab
 # 3 - check disable cache

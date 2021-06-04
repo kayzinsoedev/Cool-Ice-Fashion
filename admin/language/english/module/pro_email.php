@@ -2,7 +2,7 @@
 // Heading
 $_['heading_title'] = '<img src="'. (defined('JPATH_MIJOSHOP_OC') ? 'admin/' : '') . 'view/pro_email/img/icon.png" alt="" style="vertical-align:bottom;padding-right:4px"/><b style="color:#156584;">Pro Email Template</b>';
 
-// Text 
+// Text
 $_['text_module'] = 'Modules';
 $_['text_image_manager'] = 'Image Manager';
 $_['text_browse'] = 'Browse';
@@ -82,7 +82,7 @@ $_['text_tab_3'] = 'Modules';
   $_['entry_total_tax_i']	= 'Include or exclude tax in price and total columns';
   $_['entry_customer_comment']	= 'Display customer comment';
   $_['entry_customer_comment_i']	= 'If customer leaves a message during checkout you can display it in the invoice with this option';
-  
+
   // product advertise
   $_['tab_module_prodad'] = 'Product advertise';
   $_['tab_prod_ad_latest'] = 'Latest';
@@ -370,7 +370,7 @@ $_['info_msg_admin.information.contact']	= '
 <span><b class="tag">{enquiry_message}</b> Message</span>
 </p>
 </div>';
-$_['info_msg_admin.affiliate.register']	= 
+$_['info_msg_admin.affiliate.register']	=
 $_['info_msg_affiliate.register']	= '
 <div class="infotags">
 <h5>Affiliate</h5>
